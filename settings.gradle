@@ -1,0 +1,2 @@
+rootProject.name = "JFGSDataWarn"
+include ':app'

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:text="标段区间"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_BFBFBF" />
+
+    <ListView
+        android:id="@+id/section_dialog_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:divider="@color/color_BFBFBF"
+        android:dividerHeight="0.5dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/section_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="取消"
+        android:textSize="16sp"
+        android:background="@drawable/shape_quit_dialog"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

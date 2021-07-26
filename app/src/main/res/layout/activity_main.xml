@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/main_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_0B1746"
+        android:gravity="center"
+        android:text="项目"
+        android:textColor="@color/color_ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_EAEAEA" />
+
+        <RadioGroup
+            android:id="@+id/main_radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/main_project_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radiogroup"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="项目"
+                android:textColor="@color/selector_textview"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/main_warn_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radiogroup"
+                android:button="@null"
+                android:gravity="center"
+                android:text="预警"
+                android:textColor="@color/selector_textview"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/main_message_rb"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_radiogroup"
+                android:button="@null"
+                android:gravity="center"
+                android:text="消息"
+                android:textColor="@color/selector_textview"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_linear"
+        android:layout_below="@+id/main_title_tv"/>
+
+</RelativeLayout>
