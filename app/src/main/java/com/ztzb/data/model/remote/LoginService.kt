@@ -2,9 +2,11 @@ package com.ztzb.data.model.remote
 
 import com.ztzb.data.http.http.HttpUrl
 import com.ztzb.data.http.response.BaseResponse
+import com.ztzb.data.model.data.LoginBean
 import io.reactivex.Single
-import retrofit2.http.FieldMap
-import retrofit2.http.FormUrlEncoded
+import okhttp3.RequestBody
+import retrofit2.http.Body
+import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface LoginService {
@@ -12,8 +14,8 @@ interface LoginService {
     /**
      * 登录
      */
-    @FormUrlEncoded
-    @POST(HttpUrl.REGISTER)
-    fun requestOfLogin(@FieldMap param: MutableMap<String, String?>): Single<BaseResponse<String>>
+    @Headers("Content-Type: application/json")
+    @POST(HttpUrl.LOGIN)
+    fun requestOfLogin(@Body param: RequestBody): Single<BaseResponse<LoginBean>>
 
 }

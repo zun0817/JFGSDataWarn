@@ -9,7 +9,7 @@ object Constants {
 
     const val PATH_CACHE = "/storage/emulated/0/Android/data/com.ztzb.data/cache/GFGSCache"
 
-    const val BASE_URL = "http://10.1.182.11:8080/api/"
+    const val BASE_URL = "http://plat.tbmcloud.com.cn/device-ai/"
 
     /**
      * 未知错误

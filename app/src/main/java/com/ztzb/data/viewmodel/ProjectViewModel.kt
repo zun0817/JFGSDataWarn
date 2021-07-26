@@ -4,6 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
+import com.ztzb.data.model.data.ProjectBean
 import com.ztzb.data.model.repository.ProjectRepository
 
 class ProjectViewModel(private val repository: ProjectRepository) : BaseViewModel() {
@@ -12,7 +13,7 @@ class ProjectViewModel(private val repository: ProjectRepository) : BaseViewMode
 
     private lateinit var owner: LifecycleOwner
 
-    val projects = MutableLiveData<MutableList<String>>()
+    val projects = MutableLiveData<MutableList<ProjectBean>>()
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
@@ -24,14 +25,13 @@ class ProjectViewModel(private val repository: ProjectRepository) : BaseViewMode
         dismissLoading()
     }
 
-    fun requestOfProject(name: String, password: String) {
-        val params = repository.getProjectParam(name, password)
-        repository.requestOfProject(params)
+    fun requestOfProject() {
+        repository.requestOfProject()
             .doOnSubscribe { showLoading() }
             .doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
-                showToast("登录成功")
+                projects.value = it
             }, {
                 showToast(it.toString())
             })

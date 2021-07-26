@@ -4,6 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
+import com.ztzb.data.model.data.LoginBean
 import com.ztzb.data.model.repository.LoginRepository
 
 /**
@@ -15,7 +16,7 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
 
     private val TAG = LoginViewModel::class.java.simpleName
 
-    val data = MutableLiveData<String>()
+    val loginBean = MutableLiveData<LoginBean>()
 
     private lateinit var owner: LifecycleOwner
 
@@ -36,6 +37,8 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
             .doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
+                loginBean.value = it
+                repository.user_token = it.token
                 showToast("登录成功")
             }, {
                 showToast(it.toString())

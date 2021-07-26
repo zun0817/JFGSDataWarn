@@ -2,7 +2,6 @@ package com.ztzb.data.ui.activity
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
@@ -12,7 +11,7 @@ import com.ztzb.data.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginActivity : BaseMVVMActivity(),View.OnClickListener {
+class LoginActivity : BaseMVVMActivity(), View.OnClickListener {
 
     private val loadingDialog: LoadingDialog by lazy { LoadingDialog() }
 
@@ -32,21 +31,33 @@ class LoginActivity : BaseMVVMActivity(),View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        MainActivity.startActivity(this)
+        val name = login_account_edit.text.toString().trim()
+        val password = login_password_edit.text.toString().trim()
+        name.takeIf { it.isBlank() }?.let {
+            showToast("请输入账户名")
+            return
+        }
+        password.takeIf { it.isBlank() }?.let {
+            showToast("请输入密码")
+            return
+        }
+        mViewModel.requestOfLogin(name, password)
     }
 
     private fun viewModelObserve() {
         mViewModel.apply {
-            loadingDialog.observe(this@LoginActivity, Observer {
+            loadingDialog.observe(this@LoginActivity, {
                 when (it) {
                     true -> showLoading()
                     false -> dismissLoading()
                 }
             })
-            toastText.observe(this@LoginActivity, Observer {
+            toastText.observe(this@LoginActivity, {
                 ToastManager.show(it)
             })
-
+            loginBean.observe(this@LoginActivity, {
+                MainActivity.startActivity(this@LoginActivity)
+            })
         }
     }
 

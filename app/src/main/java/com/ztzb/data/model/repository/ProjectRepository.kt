@@ -3,6 +3,7 @@ package com.ztzb.data.model.repository
 import android.util.Log
 import com.ztzb.data.base.BaseRepository
 import com.ztzb.data.http.rxjava.async
+import com.ztzb.data.model.data.ProjectBean
 import com.ztzb.data.model.remote.ProjectService
 import io.reactivex.Single
 
@@ -17,8 +18,8 @@ class ProjectRepository(private val projectService: ProjectService) : BaseReposi
         return map
     }
 
-    fun requestOfProject(map: MutableMap<String, String?>): Single<String> {
-        val request = projectService.requestOfProject(map)
+    fun requestOfProject(): Single<MutableList<ProjectBean>> {
+        val request = projectService.requestOfProject()
         return request.async()
             .doOnSuccess { Log.i(TAG, "onSuccess: $it") }
             .doOnError { Log.e(TAG, "onError: ", it) }

@@ -21,8 +21,9 @@ class SectionActivity : BaseMVVMActivity(),
 
     companion object {
         private val TAG = SectionActivity::class.java.simpleName
-        fun startActivity(activity: Activity) {
+        fun startActivity(activity: Activity, sections: String) {
             val intent = Intent()
+            intent.putExtra("section", sections)
             intent.setClass(activity, SectionActivity::class.java)
             activity.startActivity(intent)
         }

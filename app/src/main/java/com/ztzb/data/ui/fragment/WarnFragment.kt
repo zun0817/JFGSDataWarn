@@ -1,6 +1,7 @@
 package com.ztzb.data.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +41,16 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
         initView(view)
         viewModelObserve()
         return view
+    }
+
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        Log.e("*******Warnuser", isVisibleToUser.toString())
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        Log.e("*******Warnhidden", hidden.toString())
     }
 
     private fun initView(view: View) {

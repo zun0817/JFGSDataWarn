@@ -19,7 +19,7 @@ class Preference<T>(val name: String, val default: T) {
 
         private val FILE_NAME = "gatebrake_file"
 
-        val SERVER_IP_ADDRESS = "server_ip_address"
+        val USER_TOKEN = "user_token"
 
         public val prefs: SharedPreferences by lazy {
             App.application.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)

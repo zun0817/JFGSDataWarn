@@ -99,7 +99,6 @@
                 android:background="@android:color/transparent"
                 android:hint="请输入密码"
                 android:imeOptions="actionDone"
-                android:inputType="numberPassword"
                 android:textColor="@color/color_222222"
                 android:textColorHint="@color/color_BFBFBF"
                 android:textSize="14sp" />

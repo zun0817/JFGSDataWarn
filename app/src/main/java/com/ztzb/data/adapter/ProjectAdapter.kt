@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.ztzb.data.R
+import com.ztzb.data.model.data.ProjectBean
 
-class ProjectAdapter(private var context: Context, private var list: MutableList<String>) :
+class ProjectAdapter(private var context: Context, private var list: MutableList<ProjectBean>) :
     BaseAdapter() {
 
     override fun getCount(): Int = list.size
@@ -29,7 +30,7 @@ class ProjectAdapter(private var context: Context, private var list: MutableList
             view = convertView
             viewHoler = view.tag as ViewHoler
         }
-        viewHoler.project_tv!!.text = list[position]
+        viewHoler.project_tv!!.text = list[position].projectName
         return view!!
     }
 
