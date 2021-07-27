@@ -57,6 +57,7 @@ class LoginActivity : BaseMVVMActivity(), View.OnClickListener {
             })
             loginBean.observe(this@LoginActivity, {
                 MainActivity.startActivity(this@LoginActivity)
+                this@LoginActivity.finish()
             })
         }
     }

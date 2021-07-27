@@ -11,15 +11,12 @@ class MonitorRepository(private val monitorService: MonitorService) : BaseReposi
 
     private val TAG = MonitorRepository::class.java.simpleName
 
-    fun getMonitorParam(name: String?, serialNum: String?): MutableMap<String, String?> {
-        val map = mutableMapOf<String, String?>()
-        map["name"] = name
-        map["ipAddress"] = serialNum
-        return map
+    fun getMonitorParam(projectId: Int): Int {
+        return projectId
     }
 
-    fun requestOfMonitor(map: MutableMap<String, String?>): Single<MutableList<MonitorBean>> {
-        val request = monitorService.requestOfMonitor(map)
+    fun requestOfMonitor(projectId: Int): Single<MonitorBean> {
+        val request = monitorService.requestOfMonitor(projectId)
         return request.async()
             .doOnSuccess { Log.i(TAG, "onSuccess: $it") }
             .doOnError { Log.e(TAG, "onError: ", it) }

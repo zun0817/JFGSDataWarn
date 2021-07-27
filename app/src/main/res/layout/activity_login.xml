@@ -59,6 +59,8 @@
                 android:layout_marginRight="10dp"
                 android:background="@android:color/transparent"
                 android:hint="请输入账户"
+                android:maxLines="1"
+                android:singleLine="true"
                 android:imeOptions="actionNext"
                 android:textColor="@color/color_222222"
                 android:textColorHint="@color/color_BFBFBF"
@@ -98,7 +100,9 @@
                 android:layout_marginRight="10dp"
                 android:background="@android:color/transparent"
                 android:hint="请输入密码"
+                android:singleLine="true"
                 android:imeOptions="actionDone"
+                android:maxLines="1"
                 android:textColor="@color/color_222222"
                 android:textColorHint="@color/color_BFBFBF"
                 android:textSize="14sp" />

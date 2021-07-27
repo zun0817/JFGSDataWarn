@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.ztzb.data.R
-import com.ztzb.data.model.data.MonitorBean
+import com.ztzb.data.model.data.SubItem
 
-class MonitorAdapter(private var context: Context, private var list: MutableList<MonitorBean>) :
+class MonitorAdapter(private var context: Context, private var list: MutableList<SubItem>) :
     BaseAdapter() {
 
     override fun getCount(): Int = list.size
@@ -31,8 +31,13 @@ class MonitorAdapter(private var context: Context, private var list: MutableList
             view = convertView
             viewHoler = view.tag as ViewHoler
         }
-        viewHoler.monitor_label_tv!!.text = list[position].key
-        viewHoler.monitor_value_tv!!.text = list[position].value
+        viewHoler.monitor_label_tv!!.text = list[position].itemName
+        if (list[position].value != null) {
+            viewHoler.monitor_value_tv!!.text =
+                list[position].value.toString() + " " + list[position].unit
+        } else {
+            viewHoler.monitor_value_tv!!.text = "0.0 " + list[position].unit
+        }
         return view!!
     }
 

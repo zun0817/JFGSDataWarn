@@ -19,11 +19,11 @@ object HttpUrl {
     // 远程开门状态
     const val REGISTER = "device/remote_open_status"
 
-    // 上传日志
-    const val UPLOAD_LOG = "device/upload_log"
+    // 设备监控
+    const val MONITOR = "deviceMonitor/monitorInfoAddRisk"
 
-    // 二维码查询
-    const val CHECK_QR_CODE = "device/check_qr_code"
+    // 风险预警设备数量统计
+    const val WARN_COUNT = "yuehai/warning/count"
 
     // 人脸识别
     const val FACE_RECOGNIZE = "device/face_recognize"

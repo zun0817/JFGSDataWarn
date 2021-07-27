@@ -10,8 +10,9 @@
         android:layout_gravity="center_horizontal"
         android:text="标段区间"
         android:gravity="center"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+        android:textColor="@color/color_ffffff"
+        android:textSize="18sp"
+        android:background="@color/color_0B1746"/>
 
     <View
         android:layout_width="match_parent"
@@ -32,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="取消"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:background="@drawable/shape_quit_dialog"/>
 
 

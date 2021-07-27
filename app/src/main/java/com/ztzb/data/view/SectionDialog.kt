@@ -9,15 +9,16 @@ import android.widget.ListView
 import androidx.appcompat.widget.AppCompatButton
 import com.ztzb.data.R
 import com.ztzb.data.adapter.SectionDialogAdapter
+import com.ztzb.data.model.data.ChildrenX
 import com.ztzb.data.ui.activity.MonitorActivity
 import com.ztzb.data.ui.activity.SectionActivity
 
 
-class SectionDialog(context: Context, list: MutableList<String>) : Dialog(context),
+class SectionDialog(context: Context, list: MutableList<ChildrenX>) : Dialog(context),
     View.OnClickListener, AdapterView.OnItemClickListener {
 
     private var mContext: Context = context
-    private var mList: MutableList<String> = list
+    private var mList: MutableList<ChildrenX> = list
     private lateinit var section_dialog_listview: ListView
     private lateinit var section_dialog_btn: AppCompatButton
 
@@ -45,7 +46,12 @@ class SectionDialog(context: Context, list: MutableList<String>) : Dialog(contex
     }
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        MonitorActivity.startActivity(mContext as SectionActivity)
+        MonitorActivity.startActivity(
+            mContext as SectionActivity,
+            mList[position].projectName,
+            mList[position].typeName,
+            mList[position].id
+        )
         this.dismiss()
     }
 

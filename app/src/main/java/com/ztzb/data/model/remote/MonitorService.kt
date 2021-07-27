@@ -4,17 +4,15 @@ import com.ztzb.data.http.http.HttpUrl
 import com.ztzb.data.http.response.BaseResponse
 import com.ztzb.data.model.data.MonitorBean
 import io.reactivex.Single
-import retrofit2.http.FieldMap
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MonitorService {
 
     /**
-     * 掘进参数
+     * 掘进参数监控
      */
-    @FormUrlEncoded
-    @POST(HttpUrl.REGISTER)
-    fun requestOfMonitor(@FieldMap param: MutableMap<String, String?>): Single<BaseResponse<MutableList<MonitorBean>>>
+    @GET(HttpUrl.MONITOR)
+    fun requestOfMonitor(@Query("projectId") projectId: Int): Single<BaseResponse<MonitorBean>>
 
 }

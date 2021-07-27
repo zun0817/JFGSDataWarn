@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.ztzb.data.R
+import com.ztzb.data.model.data.Children
 
-class SectionAdapter(private var context: Context, private var list: MutableList<String>) :
+class SectionAdapter(private var context: Context, private var list: MutableList<Children>) :
     BaseAdapter() {
 
     override fun getCount(): Int = list.size
@@ -29,7 +30,7 @@ class SectionAdapter(private var context: Context, private var list: MutableList
             view = convertView
             viewHoler = view.tag as ViewHoler
         }
-        viewHoler.section_tv!!.text = list[position] + "--" + position
+        viewHoler.section_tv!!.text = list[position].projectName
         return view!!
     }
 

@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.ztzb.data.R
+import com.ztzb.data.model.data.ChildrenX
 
-class SectionDialogAdapter(private var context: Context, private var list: MutableList<String>) :
+class SectionDialogAdapter(private var context: Context, private var list: MutableList<ChildrenX>) :
     BaseAdapter() {
 
     override fun getCount(): Int = list.size
@@ -29,7 +30,7 @@ class SectionDialogAdapter(private var context: Context, private var list: Mutab
             view = convertView
             viewHoler = view.tag as ViewHoler
         }
-        viewHoler.section_tv!!.text = list[position] + "--" + position
+        viewHoler.section_tv!!.text = list[position].projectName + "~" + list[position].groupName
         return view!!
     }
 

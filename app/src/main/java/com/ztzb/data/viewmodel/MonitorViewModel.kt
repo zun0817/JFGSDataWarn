@@ -4,7 +4,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
+import com.ztzb.data.http.rxjava.polling
+import com.ztzb.data.model.data.MonitorBean
 import com.ztzb.data.model.repository.MonitorRepository
+import java.util.concurrent.TimeUnit
 
 class MonitorViewModel(private val repository: MonitorRepository) : BaseViewModel() {
 
@@ -12,7 +15,7 @@ class MonitorViewModel(private val repository: MonitorRepository) : BaseViewMode
 
     private lateinit var owner: LifecycleOwner
 
-    val datas = MutableLiveData<MutableList<String>>()
+    val monitorBean = MutableLiveData<MonitorBean>()
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
@@ -24,14 +27,15 @@ class MonitorViewModel(private val repository: MonitorRepository) : BaseViewMode
         dismissLoading()
     }
 
-    fun requestOfMonitor(name: String, password: String) {
-        val params = repository.getMonitorParam(name, password)
+    fun requestOfMonitor(projectId: Int) {
+        val params = repository.getMonitorParam(projectId)
         repository.requestOfMonitor(params)
-            .doOnSubscribe { showLoading() }
-            .doAfterTerminate { dismissLoading() }
+            .polling(300, TimeUnit.SECONDS)
+            //.doOnSubscribe { showLoading() }
+            //.doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
-                showToast("登录成功")
+                monitorBean.value = it
             }, {
                 showToast(it.toString())
             })

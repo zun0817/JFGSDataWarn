@@ -51,6 +51,9 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         Log.e("*******Warnhidden", hidden.toString())
+        if (!hidden){
+            mViewModel.requestOfWarn()
+        }
     }
 
     private fun initView(view: View) {
@@ -87,7 +90,9 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
             toastText.observe(activity!!, Observer {
                 ToastManager.show(it)
             })
+            warnBean.observe(activity!!, {
 
+            })
         }
     }
 

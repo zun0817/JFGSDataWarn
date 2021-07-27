@@ -48,26 +48,62 @@
         android:paddingEnd="15dp"
         android:paddingBottom="8dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/monitor_project_tv"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:text="项目名称：水资源配置工程A7标"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/monitor_section_tv"
-            android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/monitor_project_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="设备编号："
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/monitor_ring_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="当前环号："
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="6dp"
-            android:gravity="center"
-            android:text="标段区间：粤海26 GZ13-1#~Z13#左线--0"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/monitor_type_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="设备类型："
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/monitor_status_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="运行状态："
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -77,7 +113,8 @@
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:background="@color/color_EAEAEA"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/monitor_setvalue_btn"
@@ -104,6 +141,7 @@
         android:layout_above="@+id/monitor_bottom_ll"
         android:layout_below="@+id/monitor_top_ll"
         android:divider="@color/color_BFBFBF"
-        android:dividerHeight="0.5dp" />
+        android:dividerHeight="0.5dp"
+        android:scrollbars="none"/>
 
 </RelativeLayout>
