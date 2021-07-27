@@ -30,7 +30,7 @@ class MonitorViewModel(private val repository: MonitorRepository) : BaseViewMode
     fun requestOfMonitor(projectId: Int) {
         val params = repository.getMonitorParam(projectId)
         repository.requestOfMonitor(params)
-            .polling(300, TimeUnit.SECONDS)
+            .polling(180, TimeUnit.SECONDS)
             //.doOnSubscribe { showLoading() }
             //.doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)

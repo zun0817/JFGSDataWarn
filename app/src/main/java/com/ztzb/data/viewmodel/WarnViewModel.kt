@@ -4,8 +4,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
+import com.ztzb.data.http.rxjava.polling
 import com.ztzb.data.model.data.WarnBean
 import com.ztzb.data.model.repository.WarnRepository
+import java.util.concurrent.TimeUnit
 
 class WarnViewModel(private val repository: WarnRepository) : BaseViewModel() {
 
@@ -27,8 +29,9 @@ class WarnViewModel(private val repository: WarnRepository) : BaseViewModel() {
 
     fun requestOfWarn() {
         repository.requestOfWarn()
-            .doOnSubscribe { showLoading() }
-            .doAfterTerminate { dismissLoading() }
+            .polling(180, TimeUnit.SECONDS)
+            //.doOnSubscribe { showLoading() }
+            //.doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
                 warnBean.value = it

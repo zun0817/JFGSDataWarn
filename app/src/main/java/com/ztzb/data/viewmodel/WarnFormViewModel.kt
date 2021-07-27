@@ -1,8 +1,10 @@
 package com.ztzb.data.viewmodel
 
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
+import com.ztzb.data.model.data.WarnDeviceBean
 import com.ztzb.data.model.repository.WarnFormRepository
 
 class WarnFormViewModel(private val repository: WarnFormRepository) : BaseViewModel() {
@@ -10,6 +12,8 @@ class WarnFormViewModel(private val repository: WarnFormRepository) : BaseViewMo
     private val TAG = WarnFormViewModel::class.java.simpleName
 
     private lateinit var owner: LifecycleOwner
+
+    val warnDevices = MutableLiveData<MutableList<WarnDeviceBean>>()
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
@@ -21,14 +25,14 @@ class WarnFormViewModel(private val repository: WarnFormRepository) : BaseViewMo
         dismissLoading()
     }
 
-    fun requestOfWarnForm(name: String, password: String) {
-        val params = repository.getWarnFormParam(name, password)
+    fun requestOfWarnForm(warningType: String) {
+        val params = repository.getWarnFormParam(warningType)
         repository.requestOfWarnForm(params)
             .doOnSubscribe { showLoading() }
             .doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
-                showToast("登录成功")
+                warnDevices.value = it
             }, {
                 showToast(it.toString())
             })

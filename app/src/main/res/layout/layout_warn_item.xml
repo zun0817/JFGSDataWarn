@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_interval_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="标段区间:"
+        android:textSize="16sp"
+        android:textColor="@color/color_222222"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_devicecode_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设备编号:"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/color_222222"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_devicetype_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设备类型:"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/color_222222"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_warntime_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预警时间:"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/color_222222"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_warnname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预警名称:"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/color_222222"/>
+
+
+</LinearLayout>

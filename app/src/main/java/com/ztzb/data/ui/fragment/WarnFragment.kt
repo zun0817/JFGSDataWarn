@@ -10,9 +10,11 @@ import androidx.lifecycle.Observer
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMFragment
 import com.ztzb.data.base.BaseViewModel
+import com.ztzb.data.ui.activity.WarnFormActivity
 import com.ztzb.data.util.ToastManager
 import com.ztzb.data.view.LoadingDialog
 import com.ztzb.data.viewmodel.WarnViewModel
+import kotlinx.android.synthetic.main.warn_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
@@ -51,7 +53,7 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         Log.e("*******Warnhidden", hidden.toString())
-        if (!hidden){
+        if (!hidden) {
             mViewModel.requestOfWarn()
         }
     }
@@ -68,13 +70,13 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.warn_cake_rl -> {
-
+                WarnFormActivity.startActivity(activity!!, "mudcakeRisk")
             }
             R.id.warn_settlement_rl -> {
-
+                WarnFormActivity.startActivity(activity!!, "subsideRisk")
             }
             R.id.warn_cutter_rl -> {
-
+                WarnFormActivity.startActivity(activity!!, "stuckshieldRisk")
             }
         }
     }
@@ -91,7 +93,24 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
                 ToastManager.show(it)
             })
             warnBean.observe(activity!!, {
-
+                if (it.mudcakeRisk > 0) {
+                    warn_cake_count_tv.visibility = View.VISIBLE
+                    warn_cake_count_tv.text = it.mudcakeRisk.toString()
+                } else {
+                    warn_cake_count_tv.visibility = View.GONE
+                }
+                if (it.subsideRisk > 0) {
+                    warn_settlement_count_tv.visibility = View.VISIBLE
+                    warn_settlement_count_tv.text = it.subsideRisk.toString()
+                } else {
+                    warn_settlement_count_tv.visibility = View.GONE
+                }
+                if (it.stuckshieldRisk > 0) {
+                    warn_cutter_count_tv.visibility = View.VISIBLE
+                    warn_cutter_count_tv.text = it.stuckshieldRisk.toString()
+                } else {
+                    warn_cutter_count_tv.visibility = View.GONE
+                }
             })
         }
     }

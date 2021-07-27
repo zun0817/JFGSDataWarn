@@ -25,10 +25,10 @@ object HttpUrl {
     // 风险预警设备数量统计
     const val WARN_COUNT = "yuehai/warning/count"
 
-    // 人脸识别
-    const val FACE_RECOGNIZE = "device/face_recognize"
+    // 某种风险类型的所有的设备及信息
+    const val WARN_DEVICE = "yuehai/warning/devices"
 
-    // 人证对比
-    const val ID_VERIFICATION = "device/face_compare"
+    // 风险详情
+    const val WARN_DEVICE_DETAIL = "yuehai/warning/devices"
 
 }
