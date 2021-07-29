@@ -44,6 +44,6 @@
         android:scrollbars="none"
         android:dividerHeight="1dp"
         android:fadingEdge="none"
-        android:divider="@color/color_EAEAEA"/>
+        android:divider="@color/color_dcdcdc"/>
 
 </LinearLayout>

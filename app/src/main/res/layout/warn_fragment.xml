@@ -38,8 +38,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/color_EAEAEA" />
+        android:layout_height="1dp"
+        android:background="@color/color_dcdcdc" />
 
     <RelativeLayout
         android:id="@+id/warn_settlement_rl"
@@ -73,8 +73,8 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/color_EAEAEA" />
+        android:layout_height="1dp"
+        android:background="@color/color_dcdcdc" />
 
     <RelativeLayout
         android:id="@+id/warn_cutter_rl"
@@ -108,7 +108,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/color_EAEAEA" />
+        android:layout_height="1dp"
+        android:background="@color/color_dcdcdc" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import androidx.multidex.MultiDex
+import cn.jpush.android.api.JPushInterface
 import com.ztzb.data.di.appModule
 import com.ztzb.data.util.ToastManager
 import org.koin.android.ext.koin.androidContext
@@ -32,6 +33,8 @@ class App : Application(), Thread.UncaughtExceptionHandler {
     override fun onCreate() {
         super.onCreate()
         application = this
+        JPushInterface.setDebugMode(true)
+        JPushInterface.init(this)
         Thread.setDefaultUncaughtExceptionHandler(this)
         startKoin {
             androidLogger(Level.DEBUG)

@@ -6,7 +6,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_gravity="center_horizontal"
         android:text="标段区间"
         android:gravity="center"
@@ -25,13 +25,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scrollbars="none"
-        android:divider="@color/color_BFBFBF"
+        android:divider="@color/color_dcdcdc"
         android:dividerHeight="0.5dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/section_dialog_btn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:text="取消"
         android:textSize="18sp"
         android:background="@drawable/shape_quit_dialog"/>

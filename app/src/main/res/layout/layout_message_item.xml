@@ -6,10 +6,10 @@
     android:padding="15dp">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/message_project_tv"
+        android:id="@+id/message_devicecode_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="项目名称"
+        android:text="设备编号："
         android:textColor="@color/color_222222"
         android:textSize="16sp" />
 
@@ -18,25 +18,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="标段区间"
+        android:text="标段名称："
         android:textColor="@color/color_222222"
         android:textSize="16sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/message_date_tv"
+        android:id="@+id/message_interval_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="推送时间"
+        android:text="区间名称："
         android:textColor="@color/color_222222"
         android:textSize="16sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/message_content_tv"
+        android:id="@+id/message_risktype_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="推送内容"
+        android:text="风险类型："
+        android:textColor="@color/color_222222"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/message_warntime_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="预警时间："
         android:textColor="@color/color_222222"
         android:textSize="16sp" />
 

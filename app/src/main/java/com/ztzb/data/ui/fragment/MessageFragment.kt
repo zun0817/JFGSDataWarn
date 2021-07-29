@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
-import androidx.lifecycle.Observer
 import com.ztzb.data.R
 import com.ztzb.data.adapter.MessageAdapter
 import com.ztzb.data.base.BaseMVVMFragment
@@ -48,35 +47,29 @@ class MessageFragment : BaseMVVMFragment() {
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
         Log.e("*******Messagehidden", hidden.toString())
+        if (!hidden) {
+            mViewModel.requestOfMessage(1, 50)
+        }
     }
 
     private fun initView(view: View) {
         message_listview = view.findViewById(R.id.message_listview)
-        val list = mutableListOf<String>()
-        list.add("测试")
-        list.add("测试")
-        list.add("测试")
-        list.add("测试")
-        list.add("测试")
-        list.add("测试")
-        list.add("测试")
-        val messageAdapter = MessageAdapter(activity!!, list)
-        message_listview.adapter = messageAdapter
     }
 
     private fun viewModelObserve() {
         mViewModel.apply {
-            loadingDialog.observe(activity!!, Observer {
+            loadingDialog.observe(activity!!, {
                 when (it) {
                     true -> showLoading()
                     false -> dismissLoading()
                 }
             })
-            toastText.observe(activity!!, Observer {
+            toastText.observe(activity!!, {
                 ToastManager.show(it)
             })
-            messages.observe(activity!!, Observer {
-
+            messageBean.observe(activity!!, {
+                val messageAdapter = MessageAdapter(activity!!, it.result)
+                message_listview.adapter = messageAdapter
             })
         }
     }

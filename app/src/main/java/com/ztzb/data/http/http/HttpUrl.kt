@@ -31,4 +31,16 @@ object HttpUrl {
     // 风险详情
     const val WARN_DEVICE_DETAIL = "yuehai/warning/devices"
 
+    // 沉降风险设定
+    const val SUBSIDERISK_EDIT = "yuehai/subsideRisk/addOrEdit"
+
+    // 卡盾风险设定
+    const val STUCKSHIELDRISK_EDIT = "yuehai/stuckshieldRisk/addOrEdit"
+
+    // 泥饼风险设定
+    const val MUDCAKERISK_EDIT = "yuehai/mudcakeRisk/addOrEdit"
+
+    // 消息列表
+    const val MESSAGES = "yuehai/warning/warningRiskList"
+
 }

@@ -102,4 +102,8 @@ dependencies {
     implementation 'com.uber.autodispose:autodispose-android-ktx:1.2.0'
     implementation 'com.uber.autodispose:autodispose-android-archcomponents-ktx:1.2.0'
 
+    // Jpush
+    implementation 'cn.jiguang.sdk:jcore:2.7.2'
+    implementation 'cn.jiguang.sdk:jpush:4.0.0'
+
 }

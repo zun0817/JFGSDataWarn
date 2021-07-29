@@ -107,7 +107,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -122,7 +122,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_EAEAEA" />
+            android:background="@color/color_dcdcdc" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/detail_geologSoil_ll"
@@ -144,7 +144,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -159,7 +159,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_EAEAEA" />
+            android:background="@color/color_dcdcdc" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/detail_tempreal_ll"
@@ -181,7 +181,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -196,7 +196,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_EAEAEA" />
+            android:background="@color/color_dcdcdc" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/detail_tempset_ll"
@@ -218,7 +218,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -235,7 +235,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/color_EAEAEA" />
+        android:background="@color/color_dcdcdc" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/detail_thrust_ll"
@@ -263,7 +263,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -278,7 +278,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_EAEAEA" />
+            android:background="@color/color_dcdcdc" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/detail_thrustSet_ll"
@@ -299,7 +299,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -314,7 +314,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_EAEAEA" />
+            android:background="@color/color_dcdcdc" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/detail_torqueReal_ll"
@@ -335,7 +335,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -350,7 +350,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_EAEAEA" />
+            android:background="@color/color_dcdcdc" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/detail_torqueSet_ll"
@@ -371,7 +371,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/color_EAEAEA" />
+                android:background="@color/color_dcdcdc" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/detail_torqueSet_tv"
@@ -387,6 +387,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/color_EAEAEA" />
+        android:background="@color/color_dcdcdc" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

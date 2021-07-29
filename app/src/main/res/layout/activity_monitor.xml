@@ -120,15 +120,20 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/shape_quit_dialog"
+            android:background="@null"
             android:text="自定义设定值" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_ffffff"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/monitor_report_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/shape_quit_dialog"
+            android:background="@null"
             android:text="预警分析报告" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -139,8 +144,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/monitor_bottom_ll"
         android:layout_below="@+id/monitor_top_ll"
-        android:divider="@color/color_BFBFBF"
-        android:dividerHeight="0.5dp"
+        android:divider="@color/color_dcdcdc"
+        android:dividerHeight="1dp"
         android:scrollbars="none"/>
 
 </RelativeLayout>
