@@ -27,6 +27,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JFGSDataWarn">
+        <activity android:name=".ui.activity.WarnDeviceDetailActivity"></activity>
         <activity
             android:name=".ui.activity.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">

@@ -13,6 +13,6 @@ interface WarnDeviceDetailService {
      * 某种风险类型的所有的设备及信息
      */
     @GET(HttpUrl.WARN_DEVICE)
-    fun requestOfWarnForm(@QueryMap param:MutableMap<String, Any>): Single<BaseResponse<WarnDeviceDetailBean>>
+    fun requestOfWarnDeviceDetail(@QueryMap param:MutableMap<String, Any>): Single<BaseResponse<WarnDeviceDetailBean>>
 
 }

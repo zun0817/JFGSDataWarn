@@ -35,11 +35,12 @@ class WarnFormAdapter(private var context: Context, private var list: MutableLis
             view = convertView
             viewHoler = view.tag as ViewHoler
         }
-        viewHoler.item_interval_tv!!.text = list[position].intervalName
-        viewHoler.item_devicecode_tv!!.text = list[position].deviceCode
-        viewHoler.item_devicetype_tv!!.text = list[position].deviceType
-        viewHoler.item_warntime_tv!!.text = TimeUtil.getDateTimeFromMillisecond(list[position].warningTime)
-        viewHoler.item_warnname_tv!!.text = list[position].warningName
+        viewHoler.item_interval_tv!!.text = "标段区间: " + list[position].intervalName
+        viewHoler.item_devicecode_tv!!.text = "设备编号: " + list[position].deviceCode
+        viewHoler.item_devicetype_tv!!.text = "设备类型: " + list[position].deviceType
+        viewHoler.item_warntime_tv!!.text =
+            "预警时间: " + TimeUtil.getDateTimeFromMillisecond(list[position].warningTime)
+        viewHoler.item_warnname_tv!!.text = "预警名称: " + list[position].warningName
 
         return view!!
     }

@@ -29,6 +29,7 @@
         android:text="设备类型:"
         android:textSize="16sp"
         android:layout_marginTop="6dp"
+        android:visibility="gone"
         android:textColor="@color/color_222222"/>
 
     <androidx.appcompat.widget.AppCompatTextView

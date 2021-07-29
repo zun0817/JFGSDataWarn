@@ -12,6 +12,7 @@
         android:background="@color/color_0B1746">
 
         <FrameLayout
+            android:id="@+id/warn_form_fl"
             android:layout_width="60dp"
             android:layout_height="match_parent">
 
@@ -41,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
-        android:dividerHeight="0.5dp"
+        android:dividerHeight="1dp"
         android:fadingEdge="none"
         android:divider="@color/color_EAEAEA"/>
 

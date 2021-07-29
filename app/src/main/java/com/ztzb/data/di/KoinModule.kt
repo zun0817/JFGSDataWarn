@@ -19,6 +19,7 @@ val viewModelModule = module {
     viewModel { MonitorViewModel(get()) }
     viewModel { ReportViewModel(get()) }
     viewModel { SetValueViewModel(get()) }
+    viewModel { WarnDeviceDetailViewModel(get()) }
 }
 
 val repositoryModule = module {
@@ -32,6 +33,7 @@ val repositoryModule = module {
     factory { MonitorRepository(get()) }
     factory { ReportRepository(get()) }
     factory { SetValueRepository(get()) }
+    factory { WarnDeviceDetailRepository(get()) }
 }
 
 val remoteModule = module {
@@ -45,6 +47,7 @@ val remoteModule = module {
     single { get<Retrofit>().create(MonitorService::class.java) }
     single { get<Retrofit>().create(ReportService::class.java) }
     single { get<Retrofit>().create(SetValueService::class.java) }
+    single { get<Retrofit>().create(WarnDeviceDetailService::class.java) }
 }
 
 val appModule = listOf(viewModelModule, repositoryModule, remoteModule)

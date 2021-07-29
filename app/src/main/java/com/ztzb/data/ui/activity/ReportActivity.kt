@@ -44,22 +44,8 @@ class ReportActivity : BaseMVVMActivity(), View.OnClickListener {
     private fun initView() {
         report_back_fl.setOnClickListener(this)
         list.add(ReportBean("泥饼风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("泥饼风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("泥饼风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("泥饼风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("沉降风险", "2021.07.16 12:30", ""))
         list.add(ReportBean("沉降风险", "2021.07.16 12:30", ""))
         list.add(ReportBean("卡盾风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("卡盾风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("沉降风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("沉降风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("沉降风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("卡盾风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("卡盾风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("卡盾风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("卡盾风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("泥饼风险", "2021.07.16 12:30", ""))
-        list.add(ReportBean("泥饼风险", "2021.07.16 12:30", ""))
         val reportAdapter = ReportAdapter(this, list)
         report_listview.adapter = reportAdapter
     }

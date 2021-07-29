@@ -113,8 +113,7 @@
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         android:background="@color/color_EAEAEA"
-        android:orientation="horizontal"
-        android:visibility="gone">
+        android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/monitor_setvalue_btn"

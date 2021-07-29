@@ -16,7 +16,7 @@ import com.ztzb.data.viewmodel.WarnFormViewModel
 import kotlinx.android.synthetic.main.activity_warn_form.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class WarnFormActivity : BaseMVVMActivity(), AdapterView.OnItemClickListener {
+class WarnFormActivity : BaseMVVMActivity(), AdapterView.OnItemClickListener, View.OnClickListener {
 
     companion object {
         private val TAG = WarnFormActivity::class.java.simpleName
@@ -44,10 +44,15 @@ class WarnFormActivity : BaseMVVMActivity(), AdapterView.OnItemClickListener {
     }
 
     private fun initView() {
+        warn_form_fl.setOnClickListener(this)
         warn_form_listview.onItemClickListener = this
+    }
+
+    override fun onResume() {
+        super.onResume()
         val warningType = intent.getStringExtra("warningType")
         warningType?.let {
-            when(it){
+            when (it) {
                 "mudcakeRisk" -> warn_form_title_tv.text = "泥饼风险设备列表"
                 "subsideRisk" -> warn_form_title_tv.text = "沉降风险设备列表"
                 "stuckshieldRisk" -> warn_form_title_tv.text = "卡盾风险设备列表"
@@ -56,8 +61,18 @@ class WarnFormActivity : BaseMVVMActivity(), AdapterView.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+    override fun onClick(v: View?) {
+        this.finish()
+    }
 
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val warnFormBean = lists[position]
+        WarnDeviceDetailActivity.startActivity(
+            this,
+            warnFormBean.warningType,
+            warnFormBean.id,
+            warnFormBean.intervalName,
+        )
     }
 
     private fun viewModelObserve() {
