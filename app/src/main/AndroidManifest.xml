@@ -27,7 +27,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JFGSDataWarn">
-        <activity android:name=".ui.activity.WarnDeviceDetailActivity"></activity>
+
         <activity
             android:name=".ui.activity.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
@@ -39,29 +39,32 @@
         </activity>
         <activity
             android:name=".ui.activity.MainActivity"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.WarnFormActivity"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.SectionActivity"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.SetValueActivity"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".ui.activity.ReportActivity"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.MonitorActivity"
-            android:screenOrientation="fullSensor" />
-
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.WarnDeviceDetailActivity"
+            android:screenOrientation="portrait" />
 
         <!-- Since JCore2.0.0 Required SDK核心功能-->
         <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
         <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
-        <service android:name=".service.PushService"
+        <service
+            android:name=".service.PushService"
             android:enabled="true"
             android:exported="false"
             android:process=":pushcore">
@@ -77,7 +80,7 @@
         <receiver
             android:name=".receiver.PushMessageReceiver"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
                 <category android:name="com.ztzb.data" />

@@ -39,7 +39,7 @@ class MessageAdapter(private var context: Context, private var list: MutableList
         viewHoler.message_section_tv!!.text = "标段名称：" + list[position].sectionName
         viewHoler.message_interval_tv!!.text = "区间名称：" + list[position].intervalName
         viewHoler.message_warntime_tv!!.text =
-            "预警时间：" + TimeUtil.getDateFromMillisecond(list[position].warningTime)
+            "预警时间：" + TimeUtil.getDateTimeFromMillisecond(list[position].warningTime)
         when(list[position].riskType){
             1 -> {
                 viewHoler.message_risktype_tv!!.text = "风险类型：沉降风险"

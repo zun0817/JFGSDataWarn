@@ -1,5 +1,6 @@
 package com.ztzb.data.ui.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -61,6 +62,7 @@ class WarnDeviceDetailActivity : BaseMVVMActivity(), View.OnClickListener {
         this.finish()
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun viewModelObserve() {
         mViewModel.apply {
             loadingDialog.observe(this@WarnDeviceDetailActivity, {
@@ -88,16 +90,17 @@ class WarnDeviceDetailActivity : BaseMVVMActivity(), View.OnClickListener {
                             detail_value2_tv.text = it.geologSoil
                             detail_value3_tv.text = it.soilTemperatureReal.toString() + "℃"
                             detail_value4_tv.text = it.soilTemperatureSet.toString() + "℃"
+                            detail_tempset_ll.visibility = View.GONE
                         }
                         2 -> {
-                            detail_key1_tv.text = "总推力实际值"
-                            detail_key2_tv.text = "理论总推力设定值"
-                            detail_key3_tv.text = "扭矩实际值"
-                            detail_key4_tv.text = "理论扭矩设定值"
-                            detail_value1_tv.text = it.thrustReal.toString() + "kN"
-                            detail_value2_tv.text = it.thrustSet.toString() + "kN"
-                            detail_value3_tv.text = it.torqueReal.toString() + "kN·m"
-                            detail_value4_tv.text = it.torqueSet.toString() + "kN·m"
+                            detail_key1_tv.text = "开始环号"
+                            detail_key2_tv.text = "地质情况"
+                            detail_key3_tv.text = "总推力实际值"
+                            detail_key4_tv.text = "扭矩实际值"
+                            detail_value1_tv.text = it.ringNumStart.toString() + "环"
+                            detail_value2_tv.text = it.geologSoil
+                            detail_value3_tv.text = it.thrustReal.toString() + "kN"
+                            detail_value4_tv.text = it.torqueReal.toString() + "kN·m"
                         }
                     }
                 }
@@ -112,6 +115,7 @@ class WarnDeviceDetailActivity : BaseMVVMActivity(), View.OnClickListener {
                             detail_value2_tv.text = it.geologSoil
                             detail_value3_tv.text = it.currentRingSoil.toString() + "m³"
                             detail_value4_tv.text = it.theorySoilVolume.toString() + "m³"
+                            detail_tempset_ll.visibility = View.GONE
                         }
                         2 -> {
                             detail_key1_tv.text = "开始环号"
@@ -122,6 +126,7 @@ class WarnDeviceDetailActivity : BaseMVVMActivity(), View.OnClickListener {
                             detail_value2_tv.text = it.geologSoil
                             detail_value3_tv.text = it.currentRingGrout.toString() + "L"
                             detail_value4_tv.text = it.theoryGroutVolume.toString() + "L"
+                            detail_tempset_ll.visibility = View.GONE
                         }
                     }
                 }
@@ -136,6 +141,7 @@ class WarnDeviceDetailActivity : BaseMVVMActivity(), View.OnClickListener {
                             detail_value2_tv.text = it.geologSoil
                             detail_value3_tv.text = it.edgeknifeWearReal.toString() + "mm"
                             detail_value4_tv.text = it.edgeknifeWearSet.toString() + "mm"
+                            detail_tempset_ll.visibility = View.GONE
                         }
                         2 -> {
                             detail_key1_tv.text = "开始环号"
@@ -146,6 +152,7 @@ class WarnDeviceDetailActivity : BaseMVVMActivity(), View.OnClickListener {
                             detail_value2_tv.text = it.geologSoil
                             detail_value3_tv.text = it.thrustReal.toString() + "kN"
                             detail_value4_tv.text = it.thrustSet.toString() + "kN"
+                            detail_tempset_ll.visibility = View.GONE
                         }
                     }
                 }
