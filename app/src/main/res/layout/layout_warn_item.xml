@@ -51,4 +51,15 @@
         android:textColor="@color/color_222222"/>
 
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_09a13a"
+        android:text="详情"
+        android:gravity="center_vertical|right"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:drawableRight="@mipmap/icon_arrow"/>
+
+
 </LinearLayout>
