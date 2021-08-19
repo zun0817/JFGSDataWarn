@@ -5,9 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ExpandableListView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ztzb.data.R
+import com.ztzb.data.adapter.ExpandableAdapter
 import com.ztzb.data.adapter.SectionAdapter
 import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
@@ -22,7 +24,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class SectionActivity : BaseMVVMActivity(),
-    AdapterView.OnItemClickListener, View.OnClickListener {
+    AdapterView.OnItemClickListener, View.OnClickListener, ExpandableListView.OnChildClickListener {
 
     companion object {
         private val TAG = SectionActivity::class.java.simpleName
@@ -60,6 +62,8 @@ class SectionActivity : BaseMVVMActivity(),
             )
             val sectionAdapter = SectionAdapter(this, lists)
             section_listview.adapter = sectionAdapter
+            val expandableAdapter = ExpandableAdapter(lists, this)
+            section_exlistview.setAdapter(expandableAdapter)
         }
 //        lists.add("水资源配置工程A7标")
 //        lists.add("水资源配置工程A7标")
@@ -82,6 +86,7 @@ class SectionActivity : BaseMVVMActivity(),
 
         section_listview.onItemClickListener = this
         back_fl.setOnClickListener(this)
+        section_exlistview.setOnChildClickListener(this)
     }
 
     private fun viewModelObserve() {
@@ -104,10 +109,28 @@ class SectionActivity : BaseMVVMActivity(),
         this.finish()
     }
 
+    override fun onChildClick(
+        parent: ExpandableListView?,
+        v: View?,
+        groupPosition: Int,
+        childPosition: Int,
+        id: Long
+    ): Boolean {
+        val childrenX = lists[groupPosition].children[childPosition]
+        MonitorActivity.startActivity(
+            this,
+            childrenX.projectName,
+            childrenX.typeName,
+            childrenX.id
+        )
+        return false
+    }
+
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         lists.takeIf { it.size > 0 }?.apply {
             lists[position].children.takeIf { it.isNotEmpty() }?.apply {
-                val sectionDialog = SectionDialog(this@SectionActivity,
+                val sectionDialog = SectionDialog(
+                    this@SectionActivity,
                     this as MutableList<ChildrenX>
                 )
                 sectionDialog.setCancelable(false)
@@ -131,4 +154,5 @@ class SectionActivity : BaseMVVMActivity(),
         super.onDestroy()
         dismissLoading()
     }
+
 }

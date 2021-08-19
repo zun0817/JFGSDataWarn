@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.DeviceInfoActivity">
+
+    <FrameLayout
+        android:id="@+id/monitor_fl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_0B1746">
+
+        <FrameLayout
+            android:id="@+id/device_back_fl"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:src="@mipmap/icon_back" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="设备信息"
+            android:textColor="@color/color_ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/device_project_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="项目" />
+
+    <TextView
+        android:id="@+id/device_section_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="标段" />
+
+    <TextView
+        android:id="@+id/device_area_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="区间" />
+
+    <TextView
+        android:id="@+id/device_no_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="设备编号" />
+
+    <TextView
+        android:id="@+id/device_type_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="设备类型" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_EAEAEA" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/device_data_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="大数据分析报告" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_realtiming_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="实时监控页面" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_main_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="主监控界面" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_guide_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="导向界面" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_help_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="辅助界面" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_statistic_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="统计分析数据" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_progress_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="施工进度" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_work_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="施工工效" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_alarm_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="预警历史" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_consumables_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="耗材统计" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_pulp_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="皮带机/排浆工效统计" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+            <TextView
+                android:id="@+id/device_sealup_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:text="密封系统统计" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_EAEAEA" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

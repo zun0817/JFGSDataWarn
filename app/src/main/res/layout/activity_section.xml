@@ -19,31 +19,122 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@mipmap/icon_back"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
-                android:layout_gravity="center_vertical"/>
+                android:src="@mipmap/icon_back" />
 
         </FrameLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="项目信息"
             android:textColor="@color/color_ffffff"
             android:textSize="20sp"
-            android:layout_gravity="center"
-            android:text="标段"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/kanban_progress_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="整体进度看板"
+            android:textColor="@color/color_222222"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_EAEAEA" />
+
+        <TextView
+            android:id="@+id/kanban_work_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="整体工效看板"
+            android:textColor="@color/color_222222"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_EAEAEA" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/kanban_alarm_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="报警统计看板"
+            android:textColor="@color/color_222222"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_EAEAEA" />
+
+        <TextView
+            android:id="@+id/kanban_safe_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="安全监测看板"
+            android:textColor="@color/color_222222"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_EAEAEA" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/color_EAEAEA"
+        android:gravity="center"
+        android:text="标段列表" />
+
+    <ExpandableListView
+        android:id="@+id/section_exlistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:childIndicator="@null"
+        android:divider="@color/color_EAEAEA"
+        android:dividerHeight="1dp"
+        android:groupIndicator="@null" />
 
     <ListView
         android:id="@+id/section_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
+        android:divider="@color/color_dcdcdc"
         android:dividerHeight="1dp"
         android:fadingEdge="none"
-        android:divider="@color/color_dcdcdc"/>
+        android:scrollbars="none"
+        android:visibility="gone" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
