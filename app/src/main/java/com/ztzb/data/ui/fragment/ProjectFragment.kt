@@ -92,7 +92,7 @@ class ProjectFragment : BaseMVVMFragment(), AdapterView.OnItemClickListener {
             it.size > 0
         }?.apply {
             val json = Gson().toJson(lists[position].children)
-            SectionActivity.startActivity(activity!!, json)
+            SectionActivity.startActivity(activity!!, json, lists[position].projectName)
         }
     }
 

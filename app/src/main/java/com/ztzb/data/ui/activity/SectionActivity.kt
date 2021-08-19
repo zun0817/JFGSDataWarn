@@ -28,9 +28,10 @@ class SectionActivity : BaseMVVMActivity(),
 
     companion object {
         private val TAG = SectionActivity::class.java.simpleName
-        fun startActivity(activity: Activity, sections: String) {
+        fun startActivity(activity: Activity, sections: String, projectName: String) {
             val intent = Intent()
             intent.putExtra("section", sections)
+            intent.putExtra("projectName", projectName)
             intent.setClass(activity, SectionActivity::class.java)
             activity.startActivity(intent)
         }
@@ -116,13 +117,19 @@ class SectionActivity : BaseMVVMActivity(),
         childPosition: Int,
         id: Long
     ): Boolean {
+        val children = lists[groupPosition]
         val childrenX = lists[groupPosition].children[childPosition]
-        MonitorActivity.startActivity(
-            this,
-            childrenX.projectName,
-            childrenX.typeName,
-            childrenX.id
-        )
+        intent.getStringExtra("projectName")?.let {
+            DeviceInfoActivity.startActivity(
+                this,
+                childrenX.groupName,
+                childrenX.typeName,
+                it,
+                children.projectName,
+                childrenX.projectName,
+                childrenX.id
+            )
+        }
         return false
     }
 

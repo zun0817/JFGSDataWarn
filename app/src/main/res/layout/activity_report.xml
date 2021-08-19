@@ -37,6 +37,52 @@
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/report_project_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="项目" />
+
+    <TextView
+        android:id="@+id/report_section_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="标段" />
+
+    <TextView
+        android:id="@+id/report_area_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="区间" />
+
+    <TextView
+        android:id="@+id/report_no_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="设备编号" />
+
+    <TextView
+        android:id="@+id/report_type_tv"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="bottom"
+        android:paddingLeft="15dp"
+        android:text="设备类型" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_EAEAEA" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="50dp"

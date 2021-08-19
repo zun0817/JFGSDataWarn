@@ -13,14 +13,23 @@ class DeviceInfoActivity : BaseActivity(), View.OnClickListener {
 
     companion object {
         private val TAG = DeviceInfoActivity::class.java.simpleName
-        fun startActivity(activity: Activity, projectName: String, typeName: String, id: Int) {
+        fun startActivity(
+            activity: Activity,
+            projectName: String,
+            typeName: String,
+            deviceName: String,
+            sectionName: String,
+            areaName: String,
+            id: Int
+        ) {
             val intent = Intent()
             intent.setClass(activity, DeviceInfoActivity::class.java)
-            intent.putExtra("id", id)
+            intent.putExtra("deviceName", deviceName)
             intent.putExtra("typeName", typeName)
             intent.putExtra("projectName", projectName)
-            intent.putExtra("sectionName", typeName)
-            intent.putExtra("projectName", projectName)
+            intent.putExtra("sectionName", sectionName)
+            intent.putExtra("areaName", areaName)
+            intent.putExtra("id", id)
             activity.startActivity(intent)
         }
     }
@@ -31,7 +40,13 @@ class DeviceInfoActivity : BaseActivity(), View.OnClickListener {
         initView()
     }
 
-    private fun initView(){
+    private fun initView() {
+        device_project_tv.text = "项目名称：" + intent.getStringExtra("projectName")
+        device_section_tv.text = "标段名称：" + intent.getStringExtra("sectionName")
+        device_area_tv.text = "区间名称：" + intent.getStringExtra("areaName")
+        device_no_tv.text = "设备编号：" + intent.getStringExtra("deviceName")
+        device_type_tv.text = "设备类型：" + intent.getStringExtra("typeName")
+
         device_back_fl.setOnClickListener(this)
         device_data_tv.setOnClickListener(this)
         device_realtiming_tv.setOnClickListener(this)
@@ -48,15 +63,30 @@ class DeviceInfoActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id){
+        when (v!!.id) {
             R.id.device_back_fl -> {
                 this.finish()
             }
             R.id.device_data_tv -> {
-
+                val projectName = intent.getStringExtra("projectName")
+                val sectionName = intent.getStringExtra("sectionName")
+                val areaName = intent.getStringExtra("areaName")
+                val deviceName = intent.getStringExtra("deviceName")
+                val typeName = intent.getStringExtra("typeName")
+                ReportActivity.startActivity(
+                    this,
+                    projectName!!,
+                    sectionName!!,
+                    areaName!!,
+                    deviceName!!,
+                    typeName!!
+                )
             }
             R.id.device_realtiming_tv -> {
-
+                val areaName = intent.getStringExtra("areaName")
+                val id = intent.getIntExtra("id", 0)
+                val typeName = intent.getStringExtra("typeName")
+                MonitorActivity.startActivity(this, areaName!!, typeName!!, id)
             }
             R.id.device_main_tv -> {
 

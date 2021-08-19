@@ -85,7 +85,7 @@ class MonitorActivity : BaseMVVMActivity(), View.OnClickListener {
                 SetValueActivity.startActivity(this)
             }
             R.id.monitor_report_btn -> {
-                ReportActivity.startActivity(this)
+                //ReportActivity.startActivity(this)
             }
         }
     }
