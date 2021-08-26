@@ -20,6 +20,13 @@ val viewModelModule = module {
     viewModel { ReportViewModel(get()) }
     viewModel { SetValueViewModel(get()) }
     viewModel { WarnDeviceDetailViewModel(get()) }
+    viewModel { SafeMonitorViewModel(get()) }
+    viewModel { SafeProjectViewModel(get()) }
+    viewModel { SafeSectionViewModel(get()) }
+    viewModel { SafeProjectDetailViewModel(get()) }
+    viewModel { SafeWarnViewModel(get()) }
+    viewModel { RiskWarnViewModel(get()) }
+    viewModel { GeologicalWarnViewModel(get()) }
 }
 
 val repositoryModule = module {
@@ -34,6 +41,13 @@ val repositoryModule = module {
     factory { ReportRepository(get()) }
     factory { SetValueRepository(get()) }
     factory { WarnDeviceDetailRepository(get()) }
+    factory { SafeMonitorRepository(get()) }
+    factory { SafeProjectRepository(get()) }
+    factory { SafeSectionRepository(get()) }
+    factory { SafeProjectDetailRepository(get()) }
+    factory { SafeWarnRepository(get()) }
+    factory { RiskWarnRepository(get()) }
+    factory { GeologicalWarnRepository(get()) }
 }
 
 val remoteModule = module {
@@ -48,6 +62,13 @@ val remoteModule = module {
     single { get<Retrofit>().create(ReportService::class.java) }
     single { get<Retrofit>().create(SetValueService::class.java) }
     single { get<Retrofit>().create(WarnDeviceDetailService::class.java) }
+    single { get<Retrofit>().create(SafeMonitorService::class.java) }
+    single { get<Retrofit>().create(SafeProjectService::class.java) }
+    single { get<Retrofit>().create(SafeSectionService::class.java) }
+    single { get<Retrofit>().create(SafeProjectDetailService::class.java) }
+    single { get<Retrofit>().create(SafeWarnService::class.java) }
+    single { get<Retrofit>().create(RiskWarnService::class.java) }
+    single { get<Retrofit>().create(GeologicalWarnService::class.java) }
 }
 
 val appModule = listOf(viewModelModule, repositoryModule, remoteModule)

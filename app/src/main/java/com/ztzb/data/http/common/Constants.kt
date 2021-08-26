@@ -11,6 +11,10 @@ object Constants {
 
     const val BASE_URL = "https://plat.tbmcloud.com.cn/device-ai/"
 
+    const val YIFENG_URL = "zsjsms.guangdongwater.com:8090/"
+
+    const val ORIGIN_URL = "plat.tbmcloud.com.cn/device-ai/"
+
     /**
      * 未知错误
      */

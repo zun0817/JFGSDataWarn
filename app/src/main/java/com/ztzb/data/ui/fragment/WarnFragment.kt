@@ -10,6 +10,9 @@ import androidx.lifecycle.Observer
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMFragment
 import com.ztzb.data.base.BaseViewModel
+import com.ztzb.data.ui.activity.GeologicalWarnActivity
+import com.ztzb.data.ui.activity.RiskWarnActivity
+import com.ztzb.data.ui.activity.SafeWarnActivity
 import com.ztzb.data.ui.activity.WarnFormActivity
 import com.ztzb.data.util.ToastManager
 import com.ztzb.data.view.LoadingDialog
@@ -28,6 +31,12 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
     private lateinit var warn_settlement_rl: RelativeLayout
 
     private lateinit var warn_cutter_rl: RelativeLayout
+
+    private lateinit var warn_safe_rl:RelativeLayout
+
+    private lateinit var warn_geology_rl: RelativeLayout
+
+    private lateinit var warn_risk_rl:RelativeLayout
 
     private val mViewModel: WarnViewModel by viewModel()
 
@@ -62,9 +71,16 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
         warn_cake_rl = view.findViewById(R.id.warn_cake_rl)
         warn_settlement_rl = view.findViewById(R.id.warn_settlement_rl)
         warn_cutter_rl = view.findViewById(R.id.warn_cutter_rl)
+        warn_safe_rl = view.findViewById(R.id.warn_safe_rl)
+        warn_geology_rl = view.findViewById(R.id.warn_geology_rl)
+        warn_risk_rl = view.findViewById(R.id.warn_risk_rl)
         warn_cake_rl.setOnClickListener(this)
         warn_settlement_rl.setOnClickListener(this)
         warn_cutter_rl.setOnClickListener(this)
+
+        warn_safe_rl.setOnClickListener(this)
+        warn_geology_rl.setOnClickListener(this)
+        warn_risk_rl.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -77,6 +93,15 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
             }
             R.id.warn_cutter_rl -> {
                 WarnFormActivity.startActivity(activity!!, "stuckshieldRisk")
+            }
+            R.id.warn_safe_rl -> {
+                SafeWarnActivity.startActivity(activity!!)
+            }
+            R.id.warn_geology_rl -> {
+                GeologicalWarnActivity.startActivity(activity!!)
+            }
+            R.id.warn_risk_rl -> {
+                RiskWarnActivity.startActivity(activity!!)
             }
         }
     }

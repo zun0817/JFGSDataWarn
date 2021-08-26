@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.multidex.MultiDex
 import cn.jpush.android.api.JPushInterface
 import com.ztzb.data.di.appModule
+import com.ztzb.data.util.HttpTools
 import com.ztzb.data.util.ToastManager
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -23,6 +24,7 @@ class App : Application(), Thread.UncaughtExceptionHandler {
     companion object {
         private val TAG = App::class.java.simpleName
         var application: Application by Delegates.notNull()
+        var instance: HttpTools by Delegates.notNull()
     }
 
     override fun attachBaseContext(base: Context?) {
@@ -33,6 +35,7 @@ class App : Application(), Thread.UncaughtExceptionHandler {
     override fun onCreate() {
         super.onCreate()
         application = this
+        instance = HttpTools()
         JPushInterface.setDebugMode(true)
         JPushInterface.init(this)
         Thread.setDefaultUncaughtExceptionHandler(this)

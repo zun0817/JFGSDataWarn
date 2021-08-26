@@ -27,7 +27,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JFGSDataWarn">
-        <activity android:name=".ui.activity.DeviceInfoActivity"></activity>
+
         <activity
             android:name=".ui.activity.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
@@ -58,7 +58,41 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.WarnDeviceDetailActivity"
-            android:screenOrientation="portrait" /> <!-- Since JCore2.0.0 Required SDK核心功能 -->
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeMonitorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.DeviceInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeProjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeSectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeProjectDetailActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.activity.SafeWarnDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SafeWarnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.RiskWarnDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.RiskWarnActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.GeologicalDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.GeologicalWarnActivity"
+            android:screenOrientation="portrait" />
+        <!-- Since JCore2.0.0 Required SDK核心功能 -->
         <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
         <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
         <service

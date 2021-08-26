@@ -1,184 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.fragment.WarnFragment">
 
-    <RelativeLayout
-        android:id="@+id/warn_cake_rl"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_cake_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="泥饼风险"
-            android:textColor="@color/color_222222"
-            android:textSize="22sp" />
+        <RelativeLayout
+            android:id="@+id/warn_cake_rl"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_cake_count_tv"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/warn_cake_tv"
-            android:background="@drawable/shape_oval_textview"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/color_ffffff"
-            android:textSize="12sp"
-            android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_cake_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="泥饼风险"
+                android:textColor="@color/color_222222"
+                android:textSize="22sp" />
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_cake_count_tv"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/warn_cake_tv"
+                android:background="@drawable/shape_oval_textview"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_dcdcdc" />
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/warn_settlement_rl"
-        android:layout_width="match_parent"
-        android:layout_height="120dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_dcdcdc" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_settlement_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="沉降风险"
-            android:textColor="@color/color_222222"
-            android:textSize="22sp" />
+        <RelativeLayout
+            android:id="@+id/warn_settlement_rl"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_settlement_count_tv"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/warn_settlement_tv"
-            android:background="@drawable/shape_oval_textview"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/color_ffffff"
-            android:textSize="12sp"
-            android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_settlement_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="沉降风险"
+                android:textColor="@color/color_222222"
+                android:textSize="22sp" />
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_settlement_count_tv"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/warn_settlement_tv"
+                android:background="@drawable/shape_oval_textview"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_dcdcdc" />
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/warn_cutter_rl"
-        android:layout_width="match_parent"
-        android:layout_height="120dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_dcdcdc" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_cutter_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="卡盾风险"
-            android:textColor="@color/color_222222"
-            android:textSize="22sp" />
+        <RelativeLayout
+            android:id="@+id/warn_cutter_rl"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_cutter_count_tv"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/warn_cutter_tv"
-            android:background="@drawable/shape_oval_textview"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/color_ffffff"
-            android:textSize="12sp"
-            android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_cutter_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="卡盾风险"
+                android:textColor="@color/color_222222"
+                android:textSize="22sp" />
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_cutter_count_tv"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/warn_cutter_tv"
+                android:background="@drawable/shape_oval_textview"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_dcdcdc" />
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/warn_geology_rl"
-        android:layout_width="match_parent"
-        android:layout_height="120dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_dcdcdc" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_geology_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="不良地质预警"
-            android:textColor="@color/color_222222"
-            android:textSize="22sp" />
+        <RelativeLayout
+            android:id="@+id/warn_geology_rl"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_geology_count_tv"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/warn_geology_tv"
-            android:background="@drawable/shape_oval_textview"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/color_ffffff"
-            android:textSize="12sp"
-            android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_geology_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="不良地质预警"
+                android:textColor="@color/color_222222"
+                android:textSize="22sp" />
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_geology_count_tv"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/warn_geology_tv"
+                android:background="@drawable/shape_oval_textview"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_dcdcdc" />
+        </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/warn_risk_rl"
-        android:layout_width="match_parent"
-        android:layout_height="120dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_dcdcdc" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_risk_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="风险点预警"
-            android:textColor="@color/color_222222"
-            android:textSize="22sp" />
+        <RelativeLayout
+            android:id="@+id/warn_risk_rl"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/warn_risk_count_tv"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/warn_risk_tv"
-            android:background="@drawable/shape_oval_textview"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="@color/color_ffffff"
-            android:textSize="12sp"
-            android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_risk_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="风险点预警"
+                android:textColor="@color/color_222222"
+                android:textSize="22sp" />
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_risk_count_tv"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/warn_risk_tv"
+                android:background="@drawable/shape_oval_textview"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_dcdcdc" />
+        </RelativeLayout>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_dcdcdc" />
+
+        <RelativeLayout
+            android:id="@+id/warn_safe_rl"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_safe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="安全监测预警"
+                android:textColor="@color/color_222222"
+                android:textSize="22sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/warn_safe_count_tv"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/warn_safe_tv"
+                android:background="@drawable/shape_oval_textview"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_dcdcdc" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</ScrollView>

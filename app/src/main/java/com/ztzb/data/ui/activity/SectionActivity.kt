@@ -85,6 +85,10 @@ class SectionActivity : BaseMVVMActivity(),
 //        dialogList.add("粤海26 GZ13-1#~Z13#左线")
 //        dialogList.add("粤海26 GZ13-1#~Z13#左线")
 
+        kanban_safe_tv.setOnClickListener(this)
+        kanban_progress_tv.setOnClickListener(this)
+        kanban_work_tv.setOnClickListener(this)
+        kanban_alarm_tv.setOnClickListener(this)
         section_listview.onItemClickListener = this
         back_fl.setOnClickListener(this)
         section_exlistview.setOnChildClickListener(this)
@@ -107,7 +111,23 @@ class SectionActivity : BaseMVVMActivity(),
     }
 
     override fun onClick(v: View?) {
-        this.finish()
+        when(v!!.id){
+            R.id.kanban_safe_tv -> {
+                SafeProjectActivity.startActivity(this)
+            }
+            R.id.kanban_progress_tv -> {
+
+            }
+            R.id.kanban_work_tv -> {
+
+            }
+            R.id.kanban_alarm_tv -> {
+
+            }
+            R.id.back_fl -> {
+                this.finish()
+            }
+        }
     }
 
     override fun onChildClick(

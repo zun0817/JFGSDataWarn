@@ -43,4 +43,23 @@ object HttpUrl {
     // 消息列表
     const val MESSAGES = "yuehai/warning/warningRiskList"
 
+
+
+
+
+    // 逸风登录
+    const val YIFENG_LOGIN = "https://zsjsms.guangdongwater.com:8090/oauth/authLogin"
+
+    const val YIFENG_PROJECT = "https://zsjsms.guangdongwater.com:8090/projects/ZSJ/project/getProjectSiteTree"
+
+    const val PHP_PROJECT = "http://114.116.21.136/index/Mobile/projectList"
+
+    const val PHP_PROJECT_DETAIL = "http://114.116.21.136/index/Mobile/eachDidList"
+
+    const val PHP_SAFE_WARN = "http://114.116.21.136/index/Mobile/riskWarning"
+
+    const val PHP_RISK_WARN = "http://114.116.21.136/index/Mobile/riskManage"
+
+    const val PHP_GEOLOG_WARN = "http://114.116.21.136/index/Mobile/badGeological"
+
 }

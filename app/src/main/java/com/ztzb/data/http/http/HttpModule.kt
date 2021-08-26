@@ -1,5 +1,6 @@
 package com.ztzb.data.http.http
 
+import android.text.TextUtils
 import com.ztzb.data.BuildConfig
 import com.ztzb.data.http.common.Constants
 import com.ztzb.data.http.utils.NetWorkManager
@@ -35,9 +36,12 @@ object HttpModule {
     private val F_REQUEST_WITHOUT_BODY = F_URL + F_TIME + F_BREAK + F_HEADERS
     private val F_RESPONSE_WITHOUT_BODY = F_RESPONSE + F_BREAK + F_HEADERS + F_BREAKER
     private val F_REQUEST_WITH_BODY = F_URL + F_TIME + F_BREAK + F_HEADERS + F_BODY + F_BREAK
-    private val F_RESPONSE_WITH_BODY = F_RESPONSE + F_BREAK + F_HEADERS + F_BODY + F_BREAK + F_BREAKER
+    private val F_RESPONSE_WITH_BODY =
+        F_RESPONSE + F_BREAK + F_HEADERS + F_BODY + F_BREAK + F_BREAKER
 
     private var user_token: String by Preference(Preference.USER_TOKEN, "")
+
+    private var ipAddress: String by Preference(Preference.HTTP_URL, Constants.ORIGIN_URL)
 
     fun initHttpAPI(): HttpAPI {
         return initRetrofit().create(HttpAPI::class.java)
@@ -60,7 +64,7 @@ object HttpModule {
         addQueryParameterInterceptor(builder)
         addHeaderInterceptor(builder)
         addBasicConfig(builder)
-        //addUrlInterceptor(builder)
+        addUrlInterceptor(builder)
         return builder.build()
     }
 
@@ -159,7 +163,7 @@ object HttpModule {
 
             var contentType: MediaType? = null
             var body: String? = null
-            response?.let {
+            response.let {
                 contentType = response.body()?.contentType()
                 body = response.body()?.toString()
             }
@@ -212,40 +216,40 @@ object HttpModule {
         builder.addInterceptor(loggerInterceptor)
     }
 
-//    /**
-//     * 动态切换BaseUrl
-//     */
-//    private fun addUrlInterceptor(builder: OkHttpClient.Builder) {
-//        val urlInterceptor = Interceptor { chain ->
-//            val request = chain.request()
-//            // 设置baseUrl
-//            var baseUrl = Constants.BASE_URL
-//            if (!TextUtils.isEmpty(ipAddress)) {
-//                //baseUrl = "http://" + ipAddress + ":8080/api/";
-//                val scheme = baseUrl.substring(7)
-//                baseUrl = baseUrl.replace(scheme, ipAddress)
-//            }
-//
-//            // 新的baseUrl
-//            val newBaseUrl = okhttp3.HttpUrl.parse(baseUrl)
-//
-//            // 从request中获取原有的HttpUrl实例oldHttpUrl
-//            val oldHttpUrl = request.url()
-//            val newFullUrl = oldHttpUrl
-//                .newBuilder()
-//                .scheme(newBaseUrl!!.scheme())
-//                .host(newBaseUrl.host())
-//                .port(newBaseUrl.port())
-//                .build()
-//
-//            // 获取request的创建者builder
-//            val builder = request.newBuilder()
-//            // 重建这个request，通过builder.url(newFullUrl).build()；
-//            // 然后返回一个response至此结束修改
-//            return@Interceptor chain.proceed(builder.url(newFullUrl).build())
-//        }
-//        builder.addInterceptor(urlInterceptor)
-//    }
+    /**
+     * 动态切换BaseUrl
+     */
+    private fun addUrlInterceptor(builder: OkHttpClient.Builder) {
+        val urlInterceptor = Interceptor { chain ->
+            val request = chain.request()
+            // 设置baseUrl
+            var baseUrl = Constants.BASE_URL
+            if (!TextUtils.isEmpty(ipAddress)) {
+                //baseUrl = "http://" + ipAddress + ":8080/api/";
+                val scheme = baseUrl.substring(8)
+                baseUrl = baseUrl.replace(scheme, ipAddress)
+            }
+
+            // 新的baseUrl
+            val newBaseUrl = okhttp3.HttpUrl.parse(baseUrl)
+
+            // 从request中获取原有的HttpUrl实例oldHttpUrl
+            val oldHttpUrl = request.url()
+            val newFullUrl = oldHttpUrl
+                .newBuilder()
+                .scheme(newBaseUrl!!.scheme())
+                .host(newBaseUrl.host())
+                .port(newBaseUrl.port())
+                .build()
+
+            // 获取request的创建者builder
+            val builder = request.newBuilder()
+            // 重建这个request，通过builder.url(newFullUrl).build()；
+            // 然后返回一个response至此结束修改
+            return@Interceptor chain.proceed(builder.url(newFullUrl).build())
+        }
+        builder.addInterceptor(urlInterceptor)
+    }
 
     private fun stringifyRequestBody(request: Request): String {
         return try {
