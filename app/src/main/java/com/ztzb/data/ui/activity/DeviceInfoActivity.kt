@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseActivity
+import com.ztzb.data.util.ToastManager
 import kotlinx.android.synthetic.main.activity_device_info.*
 
 class DeviceInfoActivity : BaseActivity(), View.OnClickListener {
@@ -89,34 +90,34 @@ class DeviceInfoActivity : BaseActivity(), View.OnClickListener {
                 MonitorActivity.startActivity(this, areaName!!, typeName!!, id)
             }
             R.id.device_main_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_guide_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_help_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_statistic_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_progress_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_work_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_alarm_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_consumables_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_pulp_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
             R.id.device_sealup_tv -> {
-
+                ToastManager.show("功能开发中，敬请期待")
             }
         }
     }

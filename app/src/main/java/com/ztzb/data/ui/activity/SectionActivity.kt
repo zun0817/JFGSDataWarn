@@ -65,6 +65,7 @@ class SectionActivity : BaseMVVMActivity(),
             section_listview.adapter = sectionAdapter
             val expandableAdapter = ExpandableAdapter(lists, this)
             section_exlistview.setAdapter(expandableAdapter)
+            section_exlistview.expandGroup(0)
         }
 //        lists.add("水资源配置工程A7标")
 //        lists.add("水资源配置工程A7标")
@@ -116,13 +117,13 @@ class SectionActivity : BaseMVVMActivity(),
                 SafeProjectActivity.startActivity(this)
             }
             R.id.kanban_progress_tv -> {
-
+                showToast("功能开发中，敬请期待")
             }
             R.id.kanban_work_tv -> {
-
+                showToast("功能开发中，敬请期待")
             }
             R.id.kanban_alarm_tv -> {
-
+                showToast("功能开发中，敬请期待")
             }
             R.id.back_fl -> {
                 this.finish()

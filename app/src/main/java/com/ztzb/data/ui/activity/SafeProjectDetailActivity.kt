@@ -40,6 +40,7 @@ class SafeProjectDetailActivity : BaseMVVMActivity(), View.OnClickListener {
 
     private fun initView() {
         back_fl.setOnClickListener(this)
+        char_fl.setOnClickListener(this)
     }
 
     override fun onResume() {
@@ -51,6 +52,11 @@ class SafeProjectDetailActivity : BaseMVVMActivity(), View.OnClickListener {
         when (v!!.id) {
             R.id.back_fl -> {
                 this.finish()
+            }
+            R.id.char_fl -> {
+                val intent = Intent()
+                intent.setClass(this, SafeCharActivity::class.java)
+                startActivity(intent)
             }
         }
     }

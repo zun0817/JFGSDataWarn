@@ -33,6 +33,7 @@ class SafeProjectViewModel(private val repository: SafeProjectRepository) : Base
     }
 
     fun requestOfSafeProject() {
+        showLoading()
 //        repository.ipAddress = Constants.YIFENG_URL
 //        val params = repository.getSafeProjectParam(projectId)
 //        repository.requestOfSafeProject(params)
@@ -49,6 +50,7 @@ class SafeProjectViewModel(private val repository: SafeProjectRepository) : Base
             HttpUrl.PHP_PROJECT,
             object : HttpTools.Callback {
                 override fun onSuccess(res: String?) {
+                    dismissLoading()
                     Log.e("***success***", res.toString())
                     res?.let {
 //                        val safeProjectBeanItems = mutableListOf<SafeProjectBeanItem>()
@@ -115,6 +117,7 @@ class SafeProjectViewModel(private val repository: SafeProjectRepository) : Base
                 }
 
                 override fun onFailed(err: String?) {
+                    dismissLoading()
                     Log.e("***fail***", err.toString())
                     err?.let {
                         showToast(it)

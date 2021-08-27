@@ -8,6 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.ztzb.data.R
 import com.ztzb.data.model.data.ReportBean
+import com.ztzb.data.util.ToastManager
 
 class ReportAdapter(private var context: Context, private var list: MutableList<ReportBean>) :
     BaseAdapter() {
@@ -35,7 +36,7 @@ class ReportAdapter(private var context: Context, private var list: MutableList<
         viewHoler.report_name_tv!!.text = list[position].name
         viewHoler.report_time_tv!!.text = list[position].time
         viewHoler.report_opt_tv!!.setOnClickListener {
-
+            ToastManager.show("功能开发中，敬请期待")
         }
         return view!!
     }

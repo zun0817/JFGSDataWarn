@@ -12,6 +12,7 @@ import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.model.data.SafeProjectBean
 import com.ztzb.data.util.ToastManager
+import com.ztzb.data.view.LoadingDialog
 import com.ztzb.data.viewmodel.SafeProjectViewModel
 import kotlinx.android.synthetic.main.activity_safe_project.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -28,6 +29,8 @@ class SafeProjectActivity : BaseMVVMActivity(), View.OnClickListener,
             activity.startActivity(intent)
         }
     }
+
+    private val loadingDialog: LoadingDialog by lazy { LoadingDialog() }
 
     private lateinit var list: MutableList<SafeProjectBean>
 
@@ -55,6 +58,12 @@ class SafeProjectActivity : BaseMVVMActivity(), View.OnClickListener,
 
     private fun viewModelObserve() {
         mViewModel.apply {
+            loadingDialog.observe(this@SafeProjectActivity, {
+                when (it) {
+                    true -> showLoading()
+                    false -> dismissLoading()
+                }
+            })
             toastText.observe(this@SafeProjectActivity, {
                 ToastManager.show(it)
             })
@@ -98,5 +107,18 @@ class SafeProjectActivity : BaseMVVMActivity(), View.OnClickListener,
     ): Boolean {
         SafeProjectDetailActivity.startActivity(this)
         return true
+    }
+
+    private fun showLoading() {
+        loadingDialog.showLoading(this@SafeProjectActivity, "")
+    }
+
+    private fun dismissLoading() {
+        loadingDialog.dismiss()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        dismissLoading()
     }
 }
