@@ -9,7 +9,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_vertical"
         android:layout_marginRight="15dp"
-        android:src="@mipmap/icon_right" />
+        android:src="@mipmap/icon_right"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/item_group_name_tv"

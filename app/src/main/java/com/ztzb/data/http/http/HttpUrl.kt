@@ -62,4 +62,8 @@ object HttpUrl {
 
     const val PHP_GEOLOG_WARN = "http://114.116.21.136/index/Mobile/badGeological"
 
+    const val PHP_MONITOR_POINT = "http://114.116.21.136/index/Mobile/measuringPoint"
+
+    const val PHP_MONITOR_POINT_DETAIL = "http://114.116.21.136/index/Mobile/measuringPointList"
+
 }

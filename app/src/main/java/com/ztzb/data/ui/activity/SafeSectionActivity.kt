@@ -11,7 +11,6 @@ import com.ztzb.data.adapter.SectionExpandableAdapter
 import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.model.data.SafeProjectBean
-import com.ztzb.data.util.ToastManager
 import com.ztzb.data.viewmodel.SafeSectionViewModel
 import kotlinx.android.synthetic.main.activity_safe_section.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -82,17 +81,13 @@ class SafeSectionActivity : BaseMVVMActivity(), View.OnClickListener,
         groupPosition: Int,
         id: Long
     ): Boolean {
-        if (list[groupPosition].children == null) {
-            ToastManager.show("功能开发中，敬请期待")
-        }
+        SafeMonitorPointActivity.startActivity(this, list[groupPosition].nodeID)
         return true
     }
 
     override fun onGroupExpand(groupPosition: Int) {
         list.forEachIndexed { index, _ ->
-            if (groupPosition != index) {
-                safe_section_exlistview.collapseGroup(index)
-            }
+            safe_section_exlistview.collapseGroup(index)
         }
     }
 }

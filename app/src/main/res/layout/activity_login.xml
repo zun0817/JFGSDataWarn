@@ -130,6 +130,6 @@
         android:layout_gravity="bottom"
         android:gravity="center"
         android:paddingBottom="12dp"
-        android:text="版本号：1.0.0" />
+        android:text="版本号：1.0.1" />
 
 </FrameLayout>

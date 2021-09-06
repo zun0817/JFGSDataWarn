@@ -119,19 +119,19 @@ class WarnFragment : BaseMVVMFragment(), View.OnClickListener {
             })
             warnBean.observe(activity!!, {
                 if (it.mudcakeRisk > 0) {
-                    warn_cake_count_tv.visibility = View.VISIBLE
+                    warn_cake_count_tv.visibility = View.GONE
                     warn_cake_count_tv.text = it.mudcakeRisk.toString()
                 } else {
                     warn_cake_count_tv.visibility = View.GONE
                 }
                 if (it.subsideRisk > 0) {
-                    warn_settlement_count_tv.visibility = View.VISIBLE
+                    warn_settlement_count_tv.visibility = View.GONE
                     warn_settlement_count_tv.text = it.subsideRisk.toString()
                 } else {
                     warn_settlement_count_tv.visibility = View.GONE
                 }
                 if (it.stuckshieldRisk > 0) {
-                    warn_cutter_count_tv.visibility = View.VISIBLE
+                    warn_cutter_count_tv.visibility = View.GONE
                     warn_cutter_count_tv.text = it.stuckshieldRisk.toString()
                 } else {
                     warn_cutter_count_tv.visibility = View.GONE
