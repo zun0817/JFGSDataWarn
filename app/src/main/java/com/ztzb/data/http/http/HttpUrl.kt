@@ -8,13 +8,13 @@ package com.ztzb.data.http.http
 object HttpUrl {
 
     // 登录接口
-    const val LOGIN = "login/loginNoValidCode"
+    const val LOGIN = "index/User/UserLogin"
 
-    // 服务器时间
-    const val PROJECT = "screen/getRootTree"
+    // 发送验证码
+    const val SEND_SMS = "index/User/sendSms"
 
-    // 补光灯开关状态
-    const val REGISTER_DEVICE_URL = "device/led_switch_lstatus"
+    // 重置密码
+    const val RESET_PASSWORD = "index/User/passwordedit"
 
     // 远程开门状态
     const val REGISTER = "device/remote_open_status"

@@ -9,9 +9,11 @@ object Constants {
 
     const val PATH_CACHE = "/storage/emulated/0/Android/data/com.ztzb.data/cache/GFGSCache"
 
-    const val BASE_URL = "https://plat.tbmcloud.com.cn/device-ai/"
+    //const val BASE_URL = "https://plat.tbmcloud.com.cn/device-ai/"
 
-    const val YIFENG_URL = "zsjsms.guangdongwater.com:8090/"
+    const val BASE_URL = "http://192.168.22.51/"
+
+    //const val BASE_URL = "https://crectbm.iychat.com:13443/mall"
 
     const val ORIGIN_URL = "plat.tbmcloud.com.cn/device-ai/"
 

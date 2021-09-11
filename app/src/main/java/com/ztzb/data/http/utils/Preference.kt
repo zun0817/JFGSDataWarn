@@ -23,6 +23,12 @@ class Preference<T>(val name: String, val default: T) {
 
         val HTTP_URL = "http_url"
 
+        val ACCOUNT = "account"
+
+        val PASSWORD = "password"
+
+        val IS_REMIND_PSW = "remind_psw"
+
         public val prefs: SharedPreferences by lazy {
             App.application.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
         }

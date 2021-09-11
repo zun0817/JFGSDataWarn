@@ -17,7 +17,7 @@ interface HttpAPI {
      * 设备注册
      */
     @FormUrlEncoded
-    @POST(HttpUrl.REGISTER_DEVICE_URL)
+    @POST(HttpUrl.LOGIN)
     fun requestOfDeviceRegister(@FieldMap param: MutableMap<String, String?>): Observable<BaseResponse<String>>
 
 }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -151,5 +152,20 @@ public class CommonUtils {
     public static void startActivityForPackage(Context context, String packName) {
         Intent intent = context.getPackageManager().getLaunchIntentForPackage(packName);
         context.startActivity(intent);
+    }
+
+    public static boolean isMobilPhone(String phone) {
+        if (TextUtils.isEmpty(phone)) {
+            return false;
+        }
+        String regex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(17[013678])|(18[0,5-9]))\\d{8}$";
+        if (phone.length() != 11) {
+            return false;
+        } else {
+            Pattern p = Pattern.compile(regex);
+            Matcher m = p.matcher(phone);
+            boolean isMatch = m.matches();
+            return isMatch;
+        }
     }
 }

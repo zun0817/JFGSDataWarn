@@ -20,7 +20,7 @@ class ToastManager {
         fun init(context: Context) {
             mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT)
             mToast?.apply {
-                setGravity(Gravity.BOTTOM, 0, 190)
+                setGravity(Gravity.CENTER, 0, 190)
             }
         }
 

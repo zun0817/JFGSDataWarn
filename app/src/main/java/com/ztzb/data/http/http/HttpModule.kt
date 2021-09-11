@@ -64,7 +64,8 @@ object HttpModule {
         addQueryParameterInterceptor(builder)
         addHeaderInterceptor(builder)
         addBasicConfig(builder)
-        addUrlInterceptor(builder)
+        //addLoggerInterceptor(builder)
+        //addUrlInterceptor(builder)
         return builder.build()
     }
 

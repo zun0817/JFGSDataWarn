@@ -29,6 +29,7 @@ val viewModelModule = module {
     viewModel { GeologicalWarnViewModel(get()) }
     viewModel { SafeMonitorPointViewModel(get()) }
     viewModel { MonitorPointDetailViewModel(get()) }
+    viewModel { ResetPasswordViewModel(get()) }
 }
 
 val repositoryModule = module {
@@ -52,6 +53,7 @@ val repositoryModule = module {
     factory { GeologicalWarnRepository(get()) }
     factory { SafeMonitorPointRepository(get()) }
     factory { MonitorPointDetailRepository(get()) }
+    factory { ResetPasswordRepository(get()) }
 }
 
 val remoteModule = module {
@@ -75,6 +77,7 @@ val remoteModule = module {
     single { get<Retrofit>().create(GeologicalWarnService::class.java) }
     single { get<Retrofit>().create(SafeMonitorPointService::class.java) }
     single { get<Retrofit>().create(MonitorPointDetailService::class.java) }
+    single { get<Retrofit>().create(ResetPasswordService::class.java) }
 }
 
 val appModule = listOf(viewModelModule, repositoryModule, remoteModule)

@@ -11,7 +11,7 @@ interface ProjectService {
     /**
      * 项目列表
      */
-    @GET(HttpUrl.PROJECT)
+    @GET(HttpUrl.LOGIN)
     fun requestOfProject(): Single<BaseResponse<MutableList<ProjectBean>>>
 
 }

@@ -14,7 +14,7 @@ class GeologicalWarnRepository(private val geologicalWarnService: GeologicalWarn
 
     private val TAG = GeologicalWarnRepository::class.java.simpleName
 
-    var ipAddress: String by Preference(Preference.HTTP_URL, Constants.ORIGIN_URL)
+    var ipAddress: String by Preference(Preference.HTTP_URL, Constants.BASE_URL)
 
     fun getSafeProjectParam(projectId: Int): Int {
         return projectId

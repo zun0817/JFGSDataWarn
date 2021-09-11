@@ -4,18 +4,12 @@ import com.ztzb.data.http.http.HttpUrl
 import com.ztzb.data.http.response.BaseResponse
 import com.ztzb.data.model.data.LoginBean
 import io.reactivex.Single
-import okhttp3.RequestBody
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface LoginService {
 
-    /**
-     * 登录
-     */
-    @Headers("Content-Type: application/json")
+    @FormUrlEncoded
     @POST(HttpUrl.LOGIN)
-    fun requestOfLogin(@Body param: RequestBody): Single<BaseResponse<LoginBean>>
+    fun requestOfLogin(@FieldMap param: MutableMap<String, String>): Single<BaseResponse<LoginBean>>
 
 }

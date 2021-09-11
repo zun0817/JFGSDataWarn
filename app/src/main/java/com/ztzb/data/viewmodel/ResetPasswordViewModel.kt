@@ -5,19 +5,20 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
-import com.ztzb.data.model.data.LoginBean
-import com.ztzb.data.model.repository.LoginRepository
+import com.ztzb.data.model.repository.ResetPasswordRepository
 
 /**
  * 作者： Zun.
  * 创建： 2021/7/20.
  * 说明：
  */
-class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() {
+class ResetPasswordViewModel(private val repository: ResetPasswordRepository) : BaseViewModel() {
 
-    private val TAG = LoginViewModel::class.java.simpleName
+    private val TAG = ResetPasswordViewModel::class.java.simpleName
 
-    val loginBean = MutableLiveData<LoginBean>()
+    val smscode = MutableLiveData<String>()
+
+    val content = MutableLiveData<String>()
 
     private lateinit var owner: LifecycleOwner
 
@@ -31,17 +32,31 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
         dismissLoading()
     }
 
-    fun requestOfLogin(name: String, password: String, mac: String) {
-        val params = repository.getLoginParam(name, password, mac)
-        repository.requestOfLogin(params)
+    fun requestOfSendSMS(phone_num: String) {
+        val params = repository.getSendSMSParam(phone_num)
+        repository.requestOfSendSMS(params)
             .doOnSubscribe { showLoading() }
             .doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
                 Log.e("*****", it.toString())
-                loginBean.value = it
-                repository.token = it.token
-                showToast("登录成功")
+                smscode.value = it
+                showToast("发送成功")
+            }, {
+                showToast(it.toString())
+            })
+    }
+
+    fun requestOfResetPassword(phone: String, password: String) {
+        val params = repository.getResetPasswordParam(phone, password)
+        repository.requestOfResetPassword(params)
+            .doOnSubscribe { showLoading() }
+            .doAfterTerminate { dismissLoading() }
+            .disposableOnDestroy(owner)
+            .subscribe({
+                Log.e("*****", it.toString())
+                content.value = it
+                showToast("密码重置成功")
             }, {
                 showToast(it.toString())
             })
@@ -57,18 +72,6 @@ class LoginViewModel(private val repository: LoginRepository) : BaseViewModel() 
 
     fun setPassword(content: String) {
         repository.password = content
-    }
-
-    fun getPassword(): String {
-        return repository.password
-    }
-
-    fun setRemindPsw(isFlag: Boolean) {
-        repository.isRemindPsw = isFlag
-    }
-
-    fun getRemindPsw(): Boolean {
-        return repository.isRemindPsw
     }
 
 }
