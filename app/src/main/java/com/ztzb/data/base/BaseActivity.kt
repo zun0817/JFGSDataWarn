@@ -1,7 +1,6 @@
 package com.ztzb.data.base
 
 import android.os.Bundle
-import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.ztzb.data.common.AppManager
@@ -18,9 +17,6 @@ import kotlinx.coroutines.cancel
 abstract class BaseActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState)
         AppManager.getInstance().addActivity(this)
     }
