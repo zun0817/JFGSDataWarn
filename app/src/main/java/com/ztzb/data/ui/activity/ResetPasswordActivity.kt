@@ -8,6 +8,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.CompoundButton
+import android.widget.RelativeLayout
+import androidx.appcompat.widget.LinearLayoutCompat
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
@@ -26,9 +28,10 @@ class ResetPasswordActivity : BaseMVVMActivity(), View.OnClickListener {
 
     companion object {
         private val TAG = ResetPasswordActivity::class.java.simpleName
-        fun startActivity(activity: Activity) {
+        fun startActivity(activity: Activity, type: Int) {
             val intent = Intent()
             intent.setClass(activity, ResetPasswordActivity::class.java)
+            intent.putExtra("type", type)
             activity.startActivity(intent)
         }
     }
@@ -68,6 +71,11 @@ class ResetPasswordActivity : BaseMVVMActivity(), View.OnClickListener {
         if (mViewModel.getAccount().isNotBlank()) {
             reset_phone_edit.setText(mViewModel.getAccount())
             reset_phone_edit.setSelection(mViewModel.getAccount().length)
+        }
+        when (intent.getIntExtra("type", 0)) {
+            0 -> reset_title_tv.text = "重置密码"
+            1 -> reset_title_tv.text = "忘记密码"
+            2 -> reset_title_tv.text = "修改密码"
         }
     }
 
@@ -239,4 +247,5 @@ class ResetPasswordActivity : BaseMVVMActivity(), View.OnClickListener {
         super.onDestroy()
         dismissLoading()
     }
+
 }

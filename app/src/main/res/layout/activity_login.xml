@@ -2,9 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_relative"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_ffffff"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".ui.activity.LoginActivity">
 
@@ -25,19 +27,19 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/login_logo_img"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="30dp"
         app:cardCornerRadius="6dp"
-        app:cardElevation="6dp"
-        android:layout_below="@+id/login_logo_img"
-        android:layout_marginTop="65dp">
+        app:cardElevation="6dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/color_ffffff"
             android:orientation="vertical"
-            android:padding="35dp"
-            android:background="@color/color_ffffff">
+            android:padding="35dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -91,7 +93,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
                     android:src="@mipmap/icon_clear"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible" />
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/login_account_edit"
@@ -105,9 +107,9 @@
                     android:background="@android:color/transparent"
                     android:hint="请输入账户"
                     android:imeOptions="actionNext"
+                    android:inputType="phone"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:inputType="phone"
                     android:textColor="@color/color_222222"
                     android:textColorHint="@color/color_BFBFBF"
                     android:textSize="14sp" />
@@ -203,8 +205,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right|center_vertical"
-                    android:text="重置密码"
                     android:layout_marginRight="3dp"
+                    android:text="忘记密码"
                     android:textColor="@color/color_0666CF"
                     android:textSize="14sp" />
 

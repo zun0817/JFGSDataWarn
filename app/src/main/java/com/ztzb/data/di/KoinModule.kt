@@ -11,7 +11,7 @@ import retrofit2.Retrofit
 val viewModelModule = module {
     viewModel { LoginViewModel(get()) }
     viewModel { MainViewModel(get()) }
-    viewModel { MessageViewModel(get()) }
+    viewModel { MineViewModel(get()) }
     viewModel { ProjectViewModel(get()) }
     viewModel { SectionViewModel(get()) }
     viewModel { WarnViewModel(get()) }
@@ -35,7 +35,7 @@ val viewModelModule = module {
 val repositoryModule = module {
     factory { LoginRepository(get()) }
     factory { MainRepository() }
-    factory { MessageRepository(get()) }
+    factory { MineRepository(get()) }
     factory { ProjectRepository(get()) }
     factory { SectionRepository(get()) }
     factory { WarnRepository(get()) }
@@ -60,7 +60,7 @@ val remoteModule = module {
     single { HttpModule.initRetrofit() }
     single { get<Retrofit>().create(LoginService::class.java) }
     single { get<Retrofit>().create(ProjectService::class.java) }
-    single { get<Retrofit>().create(MessageService::class.java) }
+    single { get<Retrofit>().create(MineService::class.java) }
     single { get<Retrofit>().create(SectionService::class.java) }
     single { get<Retrofit>().create(WarnFormService::class.java) }
     single { get<Retrofit>().create(WarnService::class.java) }

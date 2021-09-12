@@ -3,6 +3,12 @@ package com.ztzb.data.base
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.ztzb.data.util.ToastManager
+import com.ztzb.data.util.StatusBarUtil
+
+import android.widget.LinearLayout
+
+
+
 
 /**
  * 作者： Zun.

@@ -45,5 +45,13 @@
     <color name="color_e4e4e4">#E4E4E4</color>
     <color name="color_BBBBBB">#BBBBBB</color>
     <color name="color_999999">#999999</color>
+    <color name="color_36F9F9">#36F9F9</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_A6A6A6">#A6A6A6</color>
+    <color name="color_f8f8f8">#F8F8F8</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_f7f9fd">#F7F9FD</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_f9f9f9">#F9F9F9</color>
 
 </resources>

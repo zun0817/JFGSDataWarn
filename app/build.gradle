@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.ztzb.data"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.1"
@@ -107,7 +107,7 @@ dependencies {
     implementation 'cn.jiguang.sdk:jpush:4.0.0'
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-
+    implementation 'com.github.lihangleo2:ShadowLayout:3.2.2'
     implementation 'com.alibaba:fastjson:1.2.78'
     implementation "com.squareup.retrofit2:converter-scalars:2.5.0"
 

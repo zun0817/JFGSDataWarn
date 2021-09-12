@@ -7,7 +7,7 @@ import android.widget.RadioGroup
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
-import com.ztzb.data.ui.fragment.MessageFragment
+import com.ztzb.data.ui.fragment.MineFragment
 import com.ztzb.data.ui.fragment.ProjectFragment
 import com.ztzb.data.ui.fragment.WarnFragment
 import com.ztzb.data.viewmodel.MainViewModel
@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
+class MainActivity : BaseMVVMActivity(),
+    RadioGroup.OnCheckedChangeListener {
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
@@ -28,7 +29,7 @@ class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
 
     private var projectFragment: ProjectFragment? = null
     private var warnFragment: WarnFragment? = null
-    private var messageFragment: MessageFragment? = null
+    private var messageFragment: MineFragment? = null
 
     private val mViewModel: MainViewModel by viewModel()
 
@@ -45,7 +46,7 @@ class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
         main_project_rb.isChecked = true
         projectFragment = ProjectFragment.newInstance()
         warnFragment = WarnFragment.newInstance()
-        messageFragment = MessageFragment.newInstance()
+        messageFragment = MineFragment.newInstance()
         supportFragmentManager.beginTransaction().add(R.id.main_container, projectFragment!!)
             .commitAllowingStateLoss()
         supportFragmentManager.beginTransaction().add(R.id.main_container, warnFragment!!)
@@ -60,7 +61,6 @@ class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         when (checkedId) {
             R.id.main_project_rb -> {
-                main_title_tv.text = "项目"
                 checkNull()
                 fragmentTransaction.hide(warnFragment!!)
                 fragmentTransaction.hide(messageFragment!!)
@@ -68,7 +68,6 @@ class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
                 fragmentTransaction.commitAllowingStateLoss()
             }
             R.id.main_warn_rb -> {
-                main_title_tv.text = "预警"
                 checkNull()
                 fragmentTransaction.hide(projectFragment!!)
                 fragmentTransaction.hide(messageFragment!!)
@@ -76,7 +75,6 @@ class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
                 fragmentTransaction.commitAllowingStateLoss()
             }
             R.id.main_message_rb -> {
-                main_title_tv.text = "消息"
                 checkNull()
                 fragmentTransaction.hide(warnFragment!!)
                 fragmentTransaction.hide(projectFragment!!)
@@ -98,7 +96,7 @@ class MainActivity : BaseMVVMActivity(), RadioGroup.OnCheckedChangeListener {
                 .commitAllowingStateLoss()
         }
         if (messageFragment == null) {
-            messageFragment = MessageFragment.newInstance()
+            messageFragment = MineFragment.newInstance()
             supportFragmentManager.beginTransaction().add(R.id.main_container, messageFragment!!)
                 .commitAllowingStateLoss()
         }

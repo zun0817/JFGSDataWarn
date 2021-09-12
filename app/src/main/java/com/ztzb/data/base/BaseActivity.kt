@@ -3,7 +3,9 @@ package com.ztzb.data.base
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.ztzb.data.R
 import com.ztzb.data.common.AppManager
+import com.ztzb.data.util.StatusBarUtil
 import io.reactivex.disposables.Disposable
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -19,6 +21,7 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope by MainScope()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppManager.getInstance().addActivity(this)
+        StatusBarUtil.setColor(this, resources.getColor(R.color.color_0666CF), 70)
     }
 
     fun dispose(vararg disposables: Disposable?) {

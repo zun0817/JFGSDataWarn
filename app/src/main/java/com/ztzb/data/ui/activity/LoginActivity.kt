@@ -1,6 +1,8 @@
 package com.ztzb.data.ui.activity
 
 import android.Manifest
+import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -15,17 +17,23 @@ import androidx.core.content.ContextCompat
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMActivity
 import com.ztzb.data.base.BaseViewModel
-import com.ztzb.data.util.DeviceUtil
-import com.ztzb.data.util.ToastManager
-import com.ztzb.data.util.ViewTouchUtil
+import com.ztzb.data.util.*
 import com.ztzb.data.view.LoadingDialog
 import com.ztzb.data.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import kotlin.properties.Delegates
 
 class LoginActivity : BaseMVVMActivity(), View.OnClickListener,
     CompoundButton.OnCheckedChangeListener {
+
+    companion object {
+        private val TAG = LoginActivity::class.java.simpleName
+        fun startActivity(activity: Activity) {
+            val intent = Intent()
+            intent.setClass(activity, LoginActivity::class.java)
+            activity.startActivity(intent)
+        }
+    }
 
     private var isShow = true
 
@@ -69,7 +77,7 @@ class LoginActivity : BaseMVVMActivity(), View.OnClickListener,
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.login_clear_img -> login_account_edit.setText("")
-            R.id.login_reset_tv -> ResetPasswordActivity.startActivity(this)
+            R.id.login_reset_tv -> ResetPasswordActivity.startActivity(this, 1)
             R.id.login_eye_img -> {
                 val content = login_password_edit.text.toString().trim()
                 if (content.isBlank()) return

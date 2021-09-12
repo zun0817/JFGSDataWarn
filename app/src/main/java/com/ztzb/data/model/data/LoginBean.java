@@ -26,10 +26,10 @@ public class LoginBean implements Serializable {
     private Integer check;
     private String note;
     private String token;
-    private Object enterpriseName;
-    private Object job;
-    private Object organization;
-    private Object duty;
+    private String enterprise_name;
+    private String job;
+    private String organization;
+    private String duty;
 
     public Integer getId() {
         return id;
@@ -207,35 +207,35 @@ public class LoginBean implements Serializable {
         this.token = token;
     }
 
-    public Object getEnterpriseName() {
-        return enterpriseName;
+    public String getEnterpriseName() {
+        return enterprise_name;
     }
 
-    public void setEnterpriseName(Object enterpriseName) {
-        this.enterpriseName = enterpriseName;
+    public void setEnterpriseName(String enterpriseName) {
+        this.enterprise_name = enterpriseName;
     }
 
-    public Object getJob() {
+    public String getJob() {
         return job;
     }
 
-    public void setJob(Object job) {
+    public void setJob(String job) {
         this.job = job;
     }
 
-    public Object getOrganization() {
+    public String getOrganization() {
         return organization;
     }
 
-    public void setOrganization(Object organization) {
+    public void setOrganization(String organization) {
         this.organization = organization;
     }
 
-    public Object getDuty() {
+    public String getDuty() {
         return duty;
     }
 
-    public void setDuty(Object duty) {
+    public void setDuty(String duty) {
         this.duty = duty;
     }
 
@@ -264,7 +264,7 @@ public class LoginBean implements Serializable {
                 ", check=" + check +
                 ", note='" + note + '\'' +
                 ", token='" + token + '\'' +
-                ", enterpriseName=" + enterpriseName +
+                ", enterpriseName=" + enterprise_name +
                 ", job=" + job +
                 ", organization=" + organization +
                 ", duty=" + duty +

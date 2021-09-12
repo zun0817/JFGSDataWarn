@@ -16,6 +16,12 @@ object HttpUrl {
     // 重置密码
     const val RESET_PASSWORD = "index/User/passwordedit"
 
+    // 用户详情
+    const val USER_DETAIL = "/index/User/userDetail"
+
+    // 退出登录
+    const val LOGIN_OUT = "index/User/loginOut"
+
     // 远程开门状态
     const val REGISTER = "device/remote_open_status"
 
@@ -30,12 +36,6 @@ object HttpUrl {
 
     // 风险详情
     const val WARN_DEVICE_DETAIL = "yuehai/warning/devices"
-
-    // 沉降风险设定
-    const val SUBSIDERISK_EDIT = "yuehai/subsideRisk/addOrEdit"
-
-    // 卡盾风险设定
-    const val STUCKSHIELDRISK_EDIT = "yuehai/stuckshieldRisk/addOrEdit"
 
     // 泥饼风险设定
     const val MUDCAKERISK_EDIT = "yuehai/mudcakeRisk/addOrEdit"

@@ -13,8 +13,6 @@ class ProjectViewModel(private val repository: ProjectRepository) : BaseViewMode
 
     private lateinit var owner: LifecycleOwner
 
-    val projects = MutableLiveData<MutableList<ProjectBean>>()
-
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
         this.owner = owner
@@ -31,7 +29,6 @@ class ProjectViewModel(private val repository: ProjectRepository) : BaseViewMode
             .doAfterTerminate { dismissLoading() }
             .disposableOnDestroy(owner)
             .subscribe({
-                projects.value = it
             }, {
                 showToast(it.toString())
             })
