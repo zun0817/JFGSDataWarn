@@ -4,11 +4,11 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.ztzb.data.base.BaseViewModel
 import com.ztzb.data.http.rxjava.disposableOnDestroy
-import com.ztzb.data.model.repository.SetValueRepository
+import com.ztzb.data.model.repository.OverallProgressRepository
 
-class SetValueViewModel(private val repository: SetValueRepository) : BaseViewModel() {
+class OverallProgressViewModel(private val repository: OverallProgressRepository) : BaseViewModel() {
 
-    private val TAG = SetValueViewModel::class.java.simpleName
+    private val TAG = OverallProgressViewModel::class.java.simpleName
 
     private lateinit var owner: LifecycleOwner
 

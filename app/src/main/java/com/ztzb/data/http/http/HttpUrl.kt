@@ -22,6 +22,12 @@ object HttpUrl {
     // 退出登录
     const val LOGIN_OUT = "index/User/loginOut"
 
+    // 项目详情
+    const val PROJECT_DETAIL = "index/Project/basicProject"
+
+    // 标段列表
+    const val SECTIONS = "index/Project/biaoDuan"
+
     // 远程开门状态
     const val REGISTER = "device/remote_open_status"
 
@@ -36,13 +42,6 @@ object HttpUrl {
 
     // 风险详情
     const val WARN_DEVICE_DETAIL = "yuehai/warning/devices"
-
-    // 泥饼风险设定
-    const val MUDCAKERISK_EDIT = "yuehai/mudcakeRisk/addOrEdit"
-
-    // 消息列表
-    const val MESSAGES = "yuehai/warning/warningRiskList"
-
 
 
 

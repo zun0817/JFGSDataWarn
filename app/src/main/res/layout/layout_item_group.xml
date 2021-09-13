@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="45dp">
 
@@ -7,21 +7,31 @@
         android:id="@+id/item_group_name_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|center_vertical"
-        android:layout_marginRight="15dp"
-        android:src="@mipmap/icon_right"
-        android:visibility="gone"/>
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/icon_expand_down" />
+
+    <ImageView
+        android:id="@+id/item_group_logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/icon_section" />
 
     <TextView
         android:id="@+id/item_group_name_tv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:text="水果"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/item_group_name_img"
+        android:layout_toEndOf="@+id/item_group_logo_img"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="土建A标"
         android:textColor="@color/color_222222"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
 
-</FrameLayout>
+</RelativeLayout>

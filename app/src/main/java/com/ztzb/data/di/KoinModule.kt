@@ -13,12 +13,12 @@ val viewModelModule = module {
     viewModel { MainViewModel(get()) }
     viewModel { MineViewModel(get()) }
     viewModel { ProjectViewModel(get()) }
-    viewModel { SectionViewModel(get()) }
+    viewModel { ProjectDetailViewModel(get()) }
     viewModel { WarnViewModel(get()) }
     viewModel { WarnFormViewModel(get()) }
     viewModel { MonitorViewModel(get()) }
     viewModel { ReportViewModel(get()) }
-    viewModel { SetValueViewModel(get()) }
+    viewModel { OverallProgressViewModel(get()) }
     viewModel { WarnDeviceDetailViewModel(get()) }
     viewModel { SafeMonitorViewModel(get()) }
     viewModel { SafeProjectViewModel(get()) }
@@ -37,12 +37,12 @@ val repositoryModule = module {
     factory { MainRepository() }
     factory { MineRepository(get()) }
     factory { ProjectRepository(get()) }
-    factory { SectionRepository(get()) }
+    factory { ProjectDetailRepository(get()) }
     factory { WarnRepository(get()) }
     factory { WarnFormRepository(get()) }
     factory { MonitorRepository(get()) }
     factory { ReportRepository(get()) }
-    factory { SetValueRepository(get()) }
+    factory { OverallProgressRepository(get()) }
     factory { WarnDeviceDetailRepository(get()) }
     factory { SafeMonitorRepository(get()) }
     factory { SafeProjectRepository(get()) }
@@ -61,12 +61,12 @@ val remoteModule = module {
     single { get<Retrofit>().create(LoginService::class.java) }
     single { get<Retrofit>().create(ProjectService::class.java) }
     single { get<Retrofit>().create(MineService::class.java) }
-    single { get<Retrofit>().create(SectionService::class.java) }
+    single { get<Retrofit>().create(ProjectDetailService::class.java) }
     single { get<Retrofit>().create(WarnFormService::class.java) }
     single { get<Retrofit>().create(WarnService::class.java) }
     single { get<Retrofit>().create(MonitorService::class.java) }
     single { get<Retrofit>().create(ReportService::class.java) }
-    single { get<Retrofit>().create(SetValueService::class.java) }
+    single { get<Retrofit>().create(OverallProgressService::class.java) }
     single { get<Retrofit>().create(WarnDeviceDetailService::class.java) }
     single { get<Retrofit>().create(SafeMonitorService::class.java) }
     single { get<Retrofit>().create(SafeProjectService::class.java) }

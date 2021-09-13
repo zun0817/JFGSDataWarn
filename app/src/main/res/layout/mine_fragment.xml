@@ -207,14 +207,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/mine_modify_cb"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/mine_profile_cb"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         app:cardCornerRadius="5dp"
-        app:cardElevation="1dp"
-        app:cardMaxElevation="1dp"
         app:contentPaddingLeft="15dp"
         app:contentPaddingRight="10dp">
 
@@ -245,14 +243,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/mine_version_cb"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/mine_modify_cb"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         app:cardCornerRadius="5dp"
-        app:cardElevation="1dp"
-        app:cardMaxElevation="1dp"
         app:contentPaddingLeft="15dp"
         app:contentPaddingRight="10dp">
 
@@ -283,14 +279,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/mine_quit_cb"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/mine_version_cb"
         android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="1dp"
-        app:cardMaxElevation="1dp">
+        app:cardCornerRadius="5dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"

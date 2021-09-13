@@ -11,7 +11,7 @@ import com.ztzb.data.R
 import com.ztzb.data.adapter.SectionDialogAdapter
 import com.ztzb.data.model.data.ChildrenX
 import com.ztzb.data.ui.activity.MonitorActivity
-import com.ztzb.data.ui.activity.SectionActivity
+import com.ztzb.data.ui.activity.ProjectDetailActivity
 
 
 class SectionDialog(context: Context, list: MutableList<ChildrenX>) : Dialog(context),
@@ -47,7 +47,7 @@ class SectionDialog(context: Context, list: MutableList<ChildrenX>) : Dialog(con
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         MonitorActivity.startActivity(
-            mContext as SectionActivity,
+            mContext as ProjectDetailActivity,
             mList[position].projectName,
             mList[position].typeName,
             mList[position].id

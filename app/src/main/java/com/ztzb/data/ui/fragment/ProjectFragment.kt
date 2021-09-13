@@ -12,6 +12,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import com.ztzb.data.R
 import com.ztzb.data.base.BaseMVVMFragment
 import com.ztzb.data.base.BaseViewModel
+import com.ztzb.data.ui.activity.ProjectDetailActivity
 import com.ztzb.data.util.ToastManager
 import com.ztzb.data.util.ViewTouchUtil
 import com.ztzb.data.view.LoadingDialog
@@ -65,7 +66,7 @@ class ProjectFragment : BaseMVVMFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.project_detail_img -> {
-
+                ProjectDetailActivity.startActivity(activity!!)
             }
             R.id.project_message_img -> {
 

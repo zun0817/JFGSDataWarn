@@ -12,6 +12,8 @@ import androidx.core.content.ContextCompat;
 import com.ztzb.data.R;
 import com.ztzb.data.model.data.Children;
 import com.ztzb.data.model.data.ChildrenX;
+import com.ztzb.data.model.data.SectionBean;
+import com.ztzb.data.model.data.SectionItem;
 import com.ztzb.data.util.ViewHolder;
 
 import java.util.List;
@@ -19,13 +21,13 @@ import java.util.List;
 public class ExpandableAdapter extends BaseExpandableListAdapter {
 
     /** 数据集合 */
-    private List<Children> mExpandableModeList;
+    private List<SectionBean> mExpandableModeList;
     /** 上下文 */
     private Context mContext;
     /** ViewHolder */
     private ViewHolder mViewHolder;
 
-    public ExpandableAdapter(List<Children> expandableModeList, Context context) {
+    public ExpandableAdapter(List<SectionBean> expandableModeList, Context context) {
         mExpandableModeList = expandableModeList;
         mContext = context;
         mViewHolder = ViewHolder.getInstance();
@@ -48,7 +50,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
     @Override
     public int getChildrenCount(int groupPosition) {
         if (mExpandableModeList == null) return 0;
-        List<ChildrenX> childDataBeans = mExpandableModeList.get(groupPosition).getChildren();
+        List<SectionItem> childDataBeans = mExpandableModeList.get(groupPosition).getData();
         return childDataBeans.size();
     }
 
@@ -73,7 +75,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
     @Override
     public Object getChild(int groupPosition, int childPosition) {
         if (mExpandableModeList == null) return null;
-        List<ChildrenX> childDataBeans = mExpandableModeList.get(groupPosition).getChildren();
+        List<SectionItem> childDataBeans = mExpandableModeList.get(groupPosition).getData();
         return childDataBeans.get(childPosition);
     }
 
@@ -124,17 +126,17 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.layout_item_group, parent, false);
         }
         // 获取组的实体对象
-        Children expandableMode = mExpandableModeList.get(groupPosition);
+        SectionBean expandableMode = mExpandableModeList.get(groupPosition);
         // 获取组名
-        String groupName = expandableMode.getProjectName();
+        String groupName = expandableMode.getName();
         // 设置TextView的文字
         mViewHolder.setText(convertView, R.id.item_group_name_tv, groupName);
 
         // 设置组item展开或者关闭的右图片
-        Drawable drawableRight = ContextCompat.getDrawable(mContext, R.mipmap.icon_right);
+        Drawable drawableRight = ContextCompat.getDrawable(mContext, R.mipmap.icon_expand_down);
         if (isExpanded) {
             // 展开
-            drawableRight = ContextCompat.getDrawable(mContext, R.mipmap.icon_down);
+            drawableRight = ContextCompat.getDrawable(mContext, R.mipmap.icon_expand_up);
         }
         mViewHolder.setImage(convertView, R.id.item_group_name_img, drawableRight);
 
@@ -156,13 +158,16 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.layout_item_child, parent, false);
         }
-        Children expandableMode = mExpandableModeList.get(groupPosition);
-        List<ChildrenX> childDataBeans = expandableMode.getChildren();
-        ChildrenX childDataBean = childDataBeans.get(childPosition);
+        SectionBean expandableMode = mExpandableModeList.get(groupPosition);
+        List<SectionItem> childDataBeans = expandableMode.getData();
+        SectionItem childDataBean = childDataBeans.get(childPosition);
         // 获取子名字
-        String childName = childDataBean.getProjectName();
+        String childName = childDataBean.getExcavating_tunnel();
+
+        String dun_name = childDataBean.getDun_name();
         // 设置文字
         mViewHolder.setText(convertView, R.id.item_child_name_tv, childName);
+        mViewHolder.setText(convertView, R.id.item_child_no_tv, dun_name);
         return convertView;
     }
 
@@ -191,7 +196,7 @@ public class ExpandableAdapter extends BaseExpandableListAdapter {
         return context.getResources().getIdentifier(filename, "mipmap", context.getPackageName());
     }
 
-    public void setExpandableModeList(List<Children> expandableModeList) {
+    public void setExpandableModeList(List<SectionBean> expandableModeList) {
         mExpandableModeList = expandableModeList;
     }
 }

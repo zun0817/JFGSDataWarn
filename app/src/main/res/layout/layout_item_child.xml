@@ -2,13 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:background="@color/color_EAEAEA">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/item_child_name_tv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="苹果"
-        android:gravity="center"/>
+        android:textColor="@color/color_555555"
+        android:textSize="13sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:id="@+id/item_child_no_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="11sp"
+        android:text="粤海##号"
+        android:textColor="@color/color_888888"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"/>
 
 </LinearLayout>

@@ -7,11 +7,8 @@ import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
-interface SetValueService {
+interface OverallProgressService {
 
-    /**
-     * 登录
-     */
     @FormUrlEncoded
     @POST(HttpUrl.REGISTER)
     fun requestOfValue(@FieldMap param: MutableMap<String, String?>): Single<BaseResponse<String>>

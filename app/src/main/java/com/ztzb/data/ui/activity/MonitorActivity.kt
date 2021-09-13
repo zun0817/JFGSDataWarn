@@ -82,7 +82,7 @@ class MonitorActivity : BaseMVVMActivity(), View.OnClickListener {
                 this.finish()
             }
             R.id.monitor_setvalue_btn -> {
-                SetValueActivity.startActivity(this)
+                OverallProgressActivity.startActivity(this)
             }
             R.id.monitor_report_btn -> {
                 //ReportActivity.startActivity(this)
